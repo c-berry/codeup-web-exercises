@@ -64,7 +64,7 @@
  */
 
 // function analyzeColor(colorChoice) {
-//     switch (colorChoice) {
+//     switch (colorChoice.toLowerCase().trim()) {
 //         case "red":
 //             return "Red, red apple.";
 //         case "blue":
@@ -90,7 +90,7 @@
 //
 // var favoriteColor = prompt("What is your favorite color?");
 //
-// alert(analyzeColor(favoriteColor))
+// alert(analyzeColor(favoriteColor));
 
 /* ########################################################################## */
 
@@ -114,31 +114,33 @@
  * return value.
  */
 
-function calculateTotal(luckyNumber, totalAmount) {
-    switch (luckyNumber) {
-        case 0:
-            return totalAmount;
-        case 1:
-            return (totalAmount) - (totalAmount * .1);
-        case 2:
-            return (totalAmount) - (totalAmount * .25);
-        case 3:
-            return (totalAmount) - (totalAmount * .35);
-        case 4:
-            return (totalAmount) - (totalAmount * .40);
-        case 5:
-            return (totalAmount) - (totalAmount);
-        default:
-    }
-}
-console.log(calculateTotal(1, 100));
-console.log(calculateTotal(2, 100));
-console.log(calculateTotal(5, 100));
-console.log(calculateTotal(0, 100));
+// function calculateTotal(luckyNumber, totalAmount) {
+//     switch (luckyNumber) {
+//         case 0:
+//             return totalAmount;
+//         case 1:
+//             return (totalAmount) - (totalAmount * .1);
+//         case 2:
+//             return (totalAmount) - (totalAmount * .25);
+//         case 3:
+//             return (totalAmount) - (totalAmount * .35);
+//         case 4:
+//             return (totalAmount) - (totalAmount * .5);
+//         case 5:
+//             return (totalAmount) - (totalAmount);
+//         default:
+//             return "That is not a valid number.";
+//     }
+// }
+// console.log(calculateTotal(1, 100));
+// console.log(calculateTotal(2, 100));
+// console.log(calculateTotal(5, 100));
+// console.log(calculateTotal(0, 100));
+// console.log(calculateTotal(6, 100));
 
-var luckyNumber = Number(prompt("What is your lucky number?"));
-var totalAmount = Number(prompt("What is your total amount?"));
-alert("Your new total is " + calculateTotal(luckyNumber, totalAmount) + "! Thanks for playing!");
+// var luckyNumber = Number(prompt("What is your lucky number?"));
+// var totalAmount = Number(prompt("What is your total amount?"));
+// alert("Your new total is " + calculateTotal(luckyNumber, totalAmount) + "! Thanks for playing!");
 
 /**
  * TODO:
@@ -150,6 +152,11 @@ alert("Your new total is " + calculateTotal(luckyNumber, totalAmount) + "! Thank
  */
 // Generate a random number between 0 and 6
 // var luckyNumber = Math.floor(Math.random() * 6);
+//alert("Your lucky number is" + luckyNumber);
+// var totalAmount = Number(prompt("What is your total bill?"))
+// alert("Your total amount is $" + calculateTotal(luckyNumber, totalAmount) + ", thanks for playing!");
+
+// console.log(calculateTotal(luckyNumber, totalAmount));
 
 /**
  * TODO:
@@ -169,3 +176,77 @@ alert("Your new total is " + calculateTotal(luckyNumber, totalAmount) + "! Thank
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+//
+// var enterNumber = confirm("Would you like to enter a number?");
+//
+// if (enterNumber) {
+//     var number = Number(prompt("Please enter a number."));
+//     isEvenOrOdd(number);
+//     plus100(number);
+//     positiveOrNegative(number);
+// } else if(NaN) {
+//     prompt("That is not a valid number.")
+// } else {
+//     (alert("Sorry to hear that!"));
+// }
+//
+// function isEvenOrOdd(number) {
+//     if(number % 2 === 0) {
+//         return(alert("Number is even."));
+//     } else if(number % 2 === 1) {
+//         return(alert("Number is odd"));
+//     } else {
+//         return alert("That is not a valid number.");
+//     }
+// }
+//
+// function plus100(number) {
+//     return(alert(number + 100));
+// }
+//
+// function positiveOrNegative(number) {
+//     if(number > 0) {
+//         return alert("Number is positive.");
+//     } else if(number < 0) {
+//         return alert("Number is negative.");
+//     } else {
+//         return alert("That is not a valid number.");
+//     }
+// }
+
+// var willEnterNumber = confirm('Do you want to enter a number?');
+//
+// if (willEnterNumber) {
+//     // do the number things...
+//
+//     // get the user input and store in a variable called numInput
+//     var numInput = Number(prompt('Please enter a number'));
+//
+//     // validate the user input (number)
+//
+//     // if valid number
+//
+//     if (typeof numInput === 'number' && !isNaN(numInput)) {
+//         // alert even/odd message...
+//         if (numInput % 2 === 0 ) {
+//             alert('Number is even');
+//         } else {
+//             alert('Number is odd');
+//         }
+//
+//         // alert num + 100 message
+//         alert(numInput + 100);
+//
+//         // alert negative/positive message
+//
+//         if (numInput > 0) {
+//             alert('Number is positive');
+//         } else {
+//             alert('Number is negative');
+//         }
+//     } else {
+//         // else alert incorrect data type
+//         alert('Incorrect data type!');
+//     }
+// }
+//
