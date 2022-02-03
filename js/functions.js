@@ -23,7 +23,7 @@ console.log(sayHello("Codeup"));
  * console.log 'helloMessage' to check your work
  */
 
-sayHello("Chris");
+
 
 var helloMessage = sayHello("Chris");
 
@@ -100,7 +100,7 @@ console.log(calculateTip(100, .25));
 var total = Number(prompt("Enter your bill total."));
 var tipPercent = Number(prompt("Enter percent in decimal form  you would like to tip."));
 var grandTotal = calculateTip(total, tipPercent);
-alert(grandTotal);
+alert(grandTotal.toFixed(2) + " dollars is your grand total!");
 
 /**
  * TODO:
@@ -117,8 +117,14 @@ alert(grandTotal);
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 
+/*
 function applyDiscount(price, discount) {
-    return price * discount;
+    var dollarsOffPrice = price * discount;
+    return price - dollarsOffPrice;
+ */
+
+function applyDiscount(price, discount) {
+    return price - (price * discount);
 }
 
 applyDiscount(100, .2)
