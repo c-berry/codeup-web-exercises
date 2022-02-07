@@ -1,3 +1,5 @@
+//While Loops:
+
 // var slices = 4;
 // while(slices > 0) {
 //     console.log("I'll have a slice!");
@@ -28,8 +30,26 @@
 //     counter = counter + 1;
 // }
 
-var number = 5;
-while (number < 200) {
-    number = number * 2;
-    console.log(number);
-}
+// var number = 5;
+// while (number < 200) {
+//     number = number * 2;
+//     console.log(number);
+// }
+
+// var i = 0;
+//
+// while (i < 10) {
+//     console.log('while loop iteration #' + i);
+//     i++;
+// }
+
+//Do-While Loops:
+
+var number = Math.floor(Math.random() * 6) +1;
+        //Or: Math.ceil(Math.random() * 6);
+var guess;
+do {
+    guess = parseInt(prompt("Enter a number between 1 and 6"));
+} while (guess !== number);
+
+alert("Your guess of " + guess + " matches the number " + number + "!");
