@@ -45,11 +45,32 @@
 
 //Do-While Loops:
 
-var number = Math.floor(Math.random() * 6) +1;
-        //Or: Math.ceil(Math.random() * 6);
-var guess;
-do {
-    guess = parseInt(prompt("Enter a number between 1 and 6"));
-} while (guess !== number);
+// var number = Math.floor(Math.random() * 6) +1;
+//         //Or: Math.ceil(Math.random() * 6);
+// var guess;
+// do {
+//     guess = parseInt(prompt("Enter a number between 1 and 6"));
+// } while (guess !== number);
+//
+// alert("Your guess of " + guess + " matches the number " + number + "!");
 
-alert("Your guess of " + guess + " matches the number " + number + "!");
+//For Loops: not as flexible as while loop
+
+// var count = 100;
+// while (count >= 0) {
+//     console.log(count);
+//     count = count -1;
+// }
+
+for(var count = 100; count >= 0; count = count -1) {
+    console.log(count);
+}
+//or
+for (var i = 100; i >= 0; i--) {
+    console.log(i);
+}
+//or
+// for (var i = 0; i < 100; 1++) {
+//     console.log(i);
+// }
+//console.log("After loops ends, i is " + i);
