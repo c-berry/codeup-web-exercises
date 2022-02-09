@@ -83,8 +83,30 @@ var prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
 // console.log(firstHalfOfList)
 // console.log(secondHalfOfList);
 
-groceryList.reverse();
-console.log(groceryList);
-groceryList.sort();
-console.log(groceryList);
+// groceryList.reverse();
+// console.log(groceryList);
+// groceryList.sort();
+// console.log(groceryList);
+
+var hamletQuote = "To be or not to be, that is the question";
+var noCommasHamletQuote = hamletQuote.replace(",", "").toLowerCase();
+//.replace will only replace the first instance
+var hamletQuoteArray = noCommasHamletQuote.split(" ");
+//.split is a string method
+
+console.log(hamletQuoteArray);
+hamletQuoteArray.reverse();
+console.log(hamletQuoteArray);
+
+var hamletQuoteBackwards = hamletQuoteArray.join(" ");
+console.log(hamletQuoteBackwards);
+var hamletWordList = hamletQuoteArray.join(", ");
+console.log(hamletWordList);
+var bringBackTheOriginal = hamletWordList.replaceAll(",", "");
+//.replaceAll will replace all instances
+console.log(bringBackTheOriginal);
+var theOriginalArray = bringBackTheOriginal.split(" ");
+theOriginalArray.reverse();
+var theOriginalQuote = theOriginalArray.join(" ");
+console.log(theOriginalQuote);
 
