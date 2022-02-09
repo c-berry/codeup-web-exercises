@@ -89,11 +89,11 @@
     }
     number2(numbers);
 
-    function number5(array) {
-        console.log(array[4]);
+    function lastNumber(array) {
+        console.log(array[array.length-1]);
     }
-    number5(numbers);
+    lastNumber(numbers);
 
-    number5(numberz);
+    lastNumber(numberz);
 
 })();
