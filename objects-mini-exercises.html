@@ -8,6 +8,54 @@
 
 <script>
 
+    // Create a file called objects-mini-exercises.html and include script tags to complete the following mini exercises:
+    //     -- Mini Exercise 1
+    // Create a few beverage objects and assign values to each object for the following properties:
+    //     - brandName
+    //     - type
+    //     - volumeInLiters
+    //     - priceInCents
+    //     - expirationDate
+    //     - datesOfPreviousSips (use an array of strings)
+    // - isOpen
+    // Define your objects using both literal syntax to create all properties and values at once and also try defining empty objects and assign property values in separate statements using the dot notation.
+
+    var cola = {
+        brandName: ["Coke", "Mr. Pibb", "Dr. Pepper"],
+        type: "dark soda",
+        volumeInLiters: 1.8,
+        priceInCents: 75,
+        expirationDate: "1/1/2023",
+        datesOfPreviousSips: ["1/1/2022", "2/2/2022", "3/3/2022"],
+        isOpen: true
+    };
+    console.log(cola.brandName);
+    console.log(cola.type);
+
+    var tea = {
+        brandName: ["Arizona", "Nestea", "Generic"],
+        type: ["sweet", "unsweet"],
+        volumeInLiters: 2.1,
+        priceInCents: 125,
+        expirationDate: "10/23/2023",
+        datesOfPreviousSips: ["6/6/2022", "5/5/2022", "4/4/2022"],
+        isOpen: true
+    };
+    console.log(tea);
+    console.log(tea.datesOfPreviousSips);
+
+    var rootBeer = {
+        brandName: ["Barg's", "Stubborn", "Generic"],
+        type: "dark soda",
+        volumeInLiters: 3.8,
+        priceInCents: 250,
+        expirationDate: "10/23/20245",
+        datesOfPreviousSips: [],
+        isOpen: false
+    };
+    console.log(rootBeer);
+    console.log(rootBeer.priceInCents);
+
 </script>
 
 </body>
