@@ -125,6 +125,16 @@
     ];
     console.log(books)
 
+    books.forEach(function(book) {
+        console.log(book);
+    });
+
+//     for (var i = 0; i <  books.length; i += 1) {
+//          console.log("Book #" + (i + 1));
+//          console.log("Title: " + books[i].title);
+//          console.log("Author: " + books[i].author.firstName + " " + books[i].author.lastName);
+// }
+
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -149,6 +159,8 @@
      *      ---
      *      ...
      */
+
+
 
     /**
      * Bonus:
