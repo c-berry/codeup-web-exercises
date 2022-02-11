@@ -94,19 +94,47 @@ var noCommasHamletQuote = hamletQuote.replace(",", "").toLowerCase();
 var hamletQuoteArray = noCommasHamletQuote.split(" ");
 //.split is a string method
 
-console.log(hamletQuoteArray);
-hamletQuoteArray.reverse();
-console.log(hamletQuoteArray);
+// console.log(hamletQuoteArray);
+// hamletQuoteArray.reverse();
+// console.log(hamletQuoteArray);
+//
+// var hamletQuoteBackwards = hamletQuoteArray.join(" ");
+// console.log(hamletQuoteBackwards);
+// var hamletWordList = hamletQuoteArray.join(", ");
+// console.log(hamletWordList);
+// var bringBackTheOriginal = hamletWordList.replaceAll(",", "");
+// //.replaceAll will replace all instances
+// console.log(bringBackTheOriginal);
+// var theOriginalArray = bringBackTheOriginal.split(" ");
+// theOriginalArray.reverse();
+// var theOriginalQuote = theOriginalArray.join(" ");
+// console.log(theOriginalQuote);
+//
 
-var hamletQuoteBackwards = hamletQuoteArray.join(" ");
-console.log(hamletQuoteBackwards);
-var hamletWordList = hamletQuoteArray.join(", ");
-console.log(hamletWordList);
-var bringBackTheOriginal = hamletWordList.replaceAll(",", "");
-//.replaceAll will replace all instances
-console.log(bringBackTheOriginal);
-var theOriginalArray = bringBackTheOriginal.split(" ");
-theOriginalArray.reverse();
-var theOriginalQuote = theOriginalArray.join(" ");
-console.log(theOriginalQuote);
+var todoList = ['Take out the trash', 'Clean the car', 'Pay the bills'];
 
+console.log('My todo list:');
+console.log(todoList);
+// ['Take out the trash', 'Clean the car', 'Pay the bills']
+
+console.log('Completing the last item: ' + todoList[todoList.length - 1]);
+
+// let's remove the last item
+var removedItem = todoList.pop();
+
+// log what we did
+console.log('Task complete: ' + removedItem);
+
+console.log(todoList);
+// ['Take out the trash', 'Clean the car']
+
+console.log('Completing the first item: ' + todoList[0]);
+
+// let's remove the first item
+var doneItem = todoList.shift();
+
+// log what we did
+console.log('Task complete: ' + doneItem);
+
+console.log(todoList);
+// ['Clean the car']
