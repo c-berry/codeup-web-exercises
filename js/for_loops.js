@@ -48,12 +48,13 @@
 //     console.log(i);
 // }
 
-// for (var i = 1; i <= 9; ++i) {
-//     for (var j = 1; j <= i; ++j) {
-//         document.write(' ' + i + ' ');
-//     }
-//     document.write('<br>');
-// }
-//5.)for(var count = 100; count >= 5; count = count -5) {
+for (var i = 1; i <= 9; ++i) {
+    for (var j = 1; j <= i; ++j) {
+        console.log(' ' + i + ' ');
+    }
+    // console.log('<br>');
+}
+// 5.)
+// for(var count = 100; count >= 5; count = count -5) {
 //     console.log(count);
 // }

@@ -55,18 +55,18 @@
 //     Examples...
 // removeBs([‘abc’, ‘ab’, ‘cat’, ‘Bay’]) // returns [‘ac’, ‘a’, ‘cat’, ‘ay’]
 
-function removeBsFromString(str) {
-    return str.replaceAll("b", "").replaceAll("B", "");
-}
-function removeBs(array) {
-    var output = [];
-   array.forEach(function(str) {
-        output.push(removeBsFromString(str));
-    });
-    return output;
-}
-
-console.log(removeBs(["abc", "ab", "cat", "Bay"]));
+// function removeBsFromString(str) {
+//     return str.replaceAll("b", "").replaceAll("B", "");
+// }
+// function removeBs(array) {
+//     var output = [];
+//    array.forEach(function(str) {
+//         output.push(removeBsFromString(str));
+//     });
+//     return output;
+// }
+//
+// console.log(removeBs(["abc", "ab", "cat", "Bay"]));
 
 // function removeBs(arr) {
 //     return arr.join(",").replaceAll("b", "").replaceAll("B", "").split(",");
@@ -81,3 +81,25 @@ console.log(removeBs(["abc", "ab", "cat", "Bay"]));
 //
 // console.log(removeBs(["abc" , "cat", "Big boy", ]));
 
+
+// var namesString = "Joe,Bob,Sally";
+//
+// console.log(namesString);
+// // Joe,Bob,Sally
+//
+// var namesArray = namesString.split("");
+//
+// console.log(namesArray);
+// namesArray.reverse();
+// console.log(namesArray);
+// var namesBackToString = namesArray.join();
+// console.log(namesBackToString);
+// console.log(typeof namesArray);
+
+function stringBackwards(inp) {
+    var stringToArray = inp.split("");
+    var arrayReversed = stringToArray.reverse();
+    return arrayReversed.join("");
+}
+
+console.log(stringBackwards("hello"))

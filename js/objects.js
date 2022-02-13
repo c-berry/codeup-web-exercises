@@ -75,13 +75,13 @@
 //         }
 // });
 
-    shoppers.forEach(function(person) {
-        if (person.amountInDollars >= 200) {
-            console.log("Congrats, " + person.name + "! " + "Your original total was $" + person.amountInDollars + ". Your discount was $" + (person.amountInDollars * .12) + ". Your new total is $" + ((person.amountInDollars) - (person.amountInDollars * .12)) + "!") ;
-        } else {
-            console.log("Sorry, " + person.name + " You did not qualify for a discount. Your total is $" + person.amountInDollars + ".");
-        }
-    });
+    // shoppers.forEach(function(person) {
+    //     if (person.amountInDollars >= 200) {
+    //         console.log("Congrats, " + person.name + "! " + "Your original total was $" + person.amountInDollars + ". Your discount was $" + (person.amountInDollars * .12) + ". Your new total is $" + ((person.amountInDollars) - (person.amountInDollars * .12)) + "!") ;
+    //     } else {
+    //         console.log("Sorry, " + person.name + " You did not qualify for a discount. Your total is $" + person.amountInDollars + ".");
+    //     }
+    // });
 
     //
     // function myLogic(person) {
@@ -107,30 +107,32 @@
      */
 
     var books = [
-        { title: "Book 1",
+        { title: "Bookmaster",
             author: { firstName: "Mr.", lastName: "Man" }
         },
-        { title: "Book 2",
+        { title: "Booklicious",
         author: { firstName: "Mrs.", lastName: "Woman" }
         },
-        { title: "Book 3",
+        { title: "Booktastic",
         author: { firstName: "Junior", lastName: "Jr." }
         },
-        { title: "Book 4",
+        { title: "Bookalook",
         author: { firstName: "John", lastName: "Johnson" }
         },
-        {title: "Book 5",
+        {title: "Bookenson",
         author: { firstName: "James", lastName: "Jameson" }
         }
     ];
-    console.log(books)
+    // console.log(books)
 
-    books.forEach(function(book) {
-        console.log(book);
-    });
+    //incomplete:
+    // books.forEach(function(book) {
+    //     console.log("Book #:" + (book + 1));
+    // });
 
+    //This one works:
 //     for (var i = 0; i <  books.length; i += 1) {
-//          console.log("Book #" + (i + 1));
+//          console.log("Book #" + (i + 1) + ":");
 //          console.log("Title: " + books[i].title);
 //          console.log("Author: " + books[i].author.firstName + " " + books[i].author.lastName);
 // }
@@ -173,4 +175,22 @@
      *   `showBookInfo` function.
      */
 
+    // var library = [{}];
+    //
+    // function addBook(title, author) {
+    //     for (i = 0, i < library.length, i += i)
+    //     library.title[i] = title;
+    //     library.author[i] = author;
+    // }
+    // addBook("Books Are Cool", "Mary Anne" );
+    // addBook("I Love Objects", "Web Dev");
+    // addBook("Arrays are a Riot", "VLA");
+    // addBook("Woooooooo", "Fun Person");
+    // addBook("I'm Tired", "Coder");
+
+
+
+
+
+    console.log(library);
 })();
