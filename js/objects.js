@@ -12,10 +12,10 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
-    // var me = {
-    //     firstName: "Chris",
-    //     lastName: "Berry"
-    // };
+    var me = {
+        firstName: "Chris",
+        lastName: "Berry"
+    };
     // console.log(me);
 
     /**
@@ -28,13 +28,13 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
 
-    // me = {
-    //     firstName: "Chris",
-    //     lastName: "Berry",
-    //     sayHello: function() {
-    //         console.log("Hello from " + this.firstName + " " + this.lastName + "!");
-    //     }
-    // }
+    me = {
+        firstName: "Chris",
+        lastName: "Berry",
+        sayHello: function() {
+            console.log("Hello from " + this.firstName + " " + this.lastName + "!");
+        }
+    }
     // me.sayHello();
 
 
@@ -58,40 +58,21 @@
         {name: 'George', amountInDollars: 320}
     ];
 
-//     for (var i = 0; i <  shoppers.length; i += 1) {
-//         if (shoppers.amountInDollars >= 200) {
-//             return console.log(shoppers.amountInDollars * .12);
-//         }
-// }
-
-    // function discount(amount) {
-    //     if (amount >= 200) {
-    //         return shoppers.name + "You get a discount!";
-    //     }
-    // }
-//     shoppers.forEach(function(item) {
-//         if (item.amountInDollars >= 200) {
-//             console.log((item.amountInDollars) - (item.amountInDollars * .12)) ;
-//         }
-// });
-
-    // shoppers.forEach(function(person) {
+    // shoppers.forEach(function (person) {
     //     if (person.amountInDollars >= 200) {
-    //         console.log("Congrats, " + person.name + "! " + "Your original total was $" + person.amountInDollars + ". Your discount was $" + (person.amountInDollars * .12) + ". Your new total is $" + ((person.amountInDollars) - (person.amountInDollars * .12)) + "!") ;
+    //         console.log("Congrats, " + person.name + "! " + "Your original total was $" + person.amountInDollars + ". Your discount was $" + (person.amountInDollars * .12) + ". Your new total is $" + ((person.amountInDollars) - (person.amountInDollars * .12)) + "!");
     //     } else {
     //         console.log("Sorry, " + person.name + " You did not qualify for a discount. Your total is $" + person.amountInDollars + ".");
     //     }
     // });
 
-    //
-    // function myLogic(person) {
-    //         if (person.amountInDollars >= 200) {
-    //             console.log("Congrats, " + person.name + "! " + "Your original total was $" + person.amountInDollars + ". Your discount was $" + (person.amountInDollars * .12) + ". Your new total is $" + ((person.amountInDollars) - (person.amountInDollars * .12)) + "!") ;
-    //         }
+    // for (var i = 0; i < shoppers.length; i += 1) {
+    //     var discount = (shoppers[i].amount > 200) ? shoppers[i].amount * .12 : 0;
+    //     var message = shoppers[i].name + " purchased " + shoppers[i].amount
+    //     + " received a discount of " + discount + " and will pay " + (shoppers[i].amount - discount);
+    //     console.log(message);
     // }
-    //
-    //
-    // shoppers.forEach(myLogic)
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -125,17 +106,31 @@
     ];
     // console.log(books)
 
-    //incomplete:
-    // books.forEach(function(book) {
-    //     console.log("Book #:" + (book + 1));
-    // });
-
-    //This one works:
+//     incomplete:
+//     books.forEach(function(book) {
+//         console.log("Book #:" + (book + 1));
+//     });
+//
+//     This one works:
 //     for (var i = 0; i <  books.length; i += 1) {
 //          console.log("Book #" + (i + 1) + ":");
 //          console.log("Title: " + books[i].title);
 //          console.log("Author: " + books[i].author.firstName + " " + books[i].author.lastName);
 // }
+
+    // for (var i = 0; i < books.length; i++) {
+    //     var bookMsg = "Book # " + (i + 1) + "\n" +
+    //         "Title " + books[i].title + "\n" +
+    //         "Author: " +  books[i].author.firstName + " " + books[i].author.lastName + "\n" + "---";
+    //     console.log(bookMsg);
+    // }
+
+    books.forEach(function(book, index){
+        var bookMsg = "Book # " + (index + 1) + "\n" +
+            "Title " + book.title + "\n" +
+            "Author: " +  book.author.firstName + " " + book.author.lastName + "\n" + "---";
+        console.log(bookMsg);
+    });
 
     /**
      * TODO:
@@ -192,5 +187,5 @@
 
 
 
-    console.log(library);
+//     console.log(library);
 })();
