@@ -12,10 +12,10 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
-    var me = {
-        firstName: "Chris",
-        lastName: "Berry"
-    };
+    // var me = {
+    //     firstName: "Chris",
+    //     lastName: "Berry"
+    // };
     // console.log(me);
 
     /**
@@ -28,13 +28,13 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
 
-    me = {
-        firstName: "Chris",
-        lastName: "Berry",
-        sayHello: function() {
-            console.log("Hello from " + this.firstName + " " + this.lastName + "!");
-        }
-    }
+    // me = {
+    //     firstName: "Chris",
+    //     lastName: "Berry",
+    //     sayHello: function() {
+    //         console.log("Hello from " + this.firstName + " " + this.lastName + "!");
+    //     }
+    // }
     // me.sayHello();
 
 
@@ -68,10 +68,21 @@
 
     // for (var i = 0; i < shoppers.length; i += 1) {
     //     var discount = (shoppers[i].amount > 200) ? shoppers[i].amount * .12 : 0;
-    //     var message = shoppers[i].name + " purchased " + shoppers[i].amount
-    //     + " received a discount of " + discount + " and will pay " + (shoppers[i].amount - discount);
+    //     var message = shoppers[i].name +
+    //     " purchased " + shoppers[i].amount +
+    //     " received a discount of " + discount +
+    //     " and will pay " + (shoppers[i].amount - discount);
     //     console.log(message);
     // }
+
+    for (var i = 0; i < shoppers.length; i += 1) {
+        var discount = (shoppers[i].amount > 200) ? shoppers[i].amount * .12 : 0;
+        var message = shoppers[i].name +
+            ' purchased ' + shoppers[i].amount +
+            ' and received a discount of ' + discount +
+            ' and will pay ' + (shoppers[i].amount - discount);
+        console.log(message);
+    }
 
 
     /** TODO:
