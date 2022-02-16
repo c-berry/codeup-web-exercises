@@ -1,4 +1,63 @@
-.fancy-header {
-    color: purple;
-    text-decoration: underline;
+html {
+    background-color: skyblue;
+    background-image: url(../img/ocean-top.jpeg);
+    font-family: fantasy, Papyrus;
+    background-size: cover;
 }
+#first-line{
+    ;
+}
+.fancy-header{
+    background-image: linear-gradient(to left, blue, red, green, orange, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: underline;
+    text-align: center;
+    padding: 5px;
+    font-size: 40px;
+}
+h2 {
+    text-decoration: underline;
+    color: red;
+}
+.ocean-header {
+    text-decoration: underline;
+    color: darkblue;
+    font-size: 40px;
+    padding-left: 45px;
+}
+.fancy-table {
+    background-color: whitesmoke;
+    padding: 10px;
+}
+ul {
+    list-style-type: circle;
+}
+li, td, p {
+    font-size: 20px;
+    padding: 5px;
+}
+th {
+    font-weight: 900;
+    font-size: 25px;
+}
+footer {
+    padding-top: 35px;
+}
+/* unvisited link (:link) */
+a:link {
+    color:blue;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color: purple;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color:red;
+}
+
+
+
