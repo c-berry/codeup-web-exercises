@@ -104,18 +104,32 @@
 //
 // console.log(stringBackwards("hello"))
 
-var object = {
-    username: "jbomb",
-    email: "john@email.com",
-    isAdmin: false
-};
-function user(input) {
-    return "user " + object.username + " is " + ((object.isAdmin) ? "" : "not ") + "an admin and can be reached at " + object.email;
+// var object = {
+//     username: "jbomb",
+//     email: "john@email.com",
+//     isAdmin: false
+// };
+// function user(input) {
+//     return "user " + object.username + " is " + ((object.isAdmin) ? "" : "not ") + "an admin and can be reached at " + object.email;
     //or:
     // if (user === object.isAdmin) {
     //     return "User " + object.username + " is an admin and can be reached at " + object.email;
     // } else {
     //     return "User " + object.username + " is not an admin and can be reached at " + object.email;
     // }
+// }
+// console.log(user(object));
+
+function isANumber(inp) {
+    return !isNaN(parseFloat(inp));
 }
-console.log(user(object));
+const areaOrPerimeter = function(l, w) {
+    if (!isANumber(l) || !isANumber(w)) {
+        return false;
+    } if (l == w) {
+        console.log(l * w);
+    } else {
+        console.log((l + w) * 2);
+    }
+}
+areaOrPerimeter(5, "5");
