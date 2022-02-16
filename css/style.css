@@ -3,6 +3,7 @@ html {
     background-image: url(../img/ocean-top.jpeg);
     font-family: fantasy, Papyrus;
     background-size: cover;
+    background-attachment: fixed;
 }
 #first-line{
     ;
