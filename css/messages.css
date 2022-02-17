@@ -1,0 +1,30 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+.message{
+    margin: .5em;
+    padding: 8px;
+    font-size: 17px;
+    border-radius: 5px;
+    border: 1px solid #b9b4b4;
+}
+div[class$="info"] {
+    background-color: rgba(164, 189, 234, 0.85);
+    color: blue;
+}
+div[class$="success"] {
+    background-color: rgba(191, 220, 191, 0.98);
+    color: green;
+}
+div[class$="warning"] {
+    background-color: lemonchiffon;
+    color: #bb8616;
+}
+div[class$="error"] {
+    background-color: #eab2c3;
+    color: darkred;
+}
