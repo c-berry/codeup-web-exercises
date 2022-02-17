@@ -119,17 +119,28 @@
     // }
 // }
 // console.log(user(object));
-
+//
 function isANumber(inp) {
     return !isNaN(parseFloat(inp));
 }
-const areaOrPerimeter = function(l, w) {
-    if (!isANumber(l) || !isANumber(w)) {
+// const areaOrPerimeter = function(l, w) {
+//     if (!isANumber(l) || !isANumber(w)) {
+//         return false;
+//     } if (l == w) {
+//         console.log(l * w);
+//     } else {
+//         console.log((l + w) * 2);
+//     }
+// }
+// areaOrPerimeter(5, "5");
+
+function sumOfStrings(inp1, inp2) {
+    if (!isANumber(inp1) || !isANumber(inp2)) {
         return false;
-    } if (l == w) {
-        console.log(l * w);
     } else {
-        console.log((l + w) * 2);
+        return (parseFloat(inp1) + parseFloat(inp2)).toString();
     }
 }
-areaOrPerimeter(5, "5");
+
+console.log(sumOfStrings("3", "2"));
+
