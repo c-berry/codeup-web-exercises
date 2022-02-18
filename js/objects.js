@@ -136,12 +136,12 @@
     //     console.log(bookMsg);
     // }
 
-    books.forEach(function(book, index){
-        var bookMsg = "Book # " + (index + 1) + "\n" +
-            "Title " + book.title + "\n" +
-            "Author: " +  book.author.firstName + " " + book.author.lastName + "\n" + "---";
-        console.log(bookMsg);
-    });
+    // books.forEach(function(book, index){
+    //     var bookMsg = "Book # " + (index + 1) + "\n" +
+    //         "Title " + book.title + "\n" +
+    //         "Author: " +  book.author.firstName + " " + book.author.lastName + "\n" + "---";
+    //     console.log(bookMsg);
+    // });
 
     /**
      * TODO:

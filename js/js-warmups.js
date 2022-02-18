@@ -120,9 +120,9 @@
 // }
 // console.log(user(object));
 //
-function isANumber(inp) {
-    return !isNaN(parseFloat(inp));
-}
+// function isANumber(inp) {
+//     return !isNaN(parseFloat(inp));
+// }
 // const areaOrPerimeter = function(l, w) {
 //     if (!isANumber(l) || !isANumber(w)) {
 //         return false;
@@ -134,13 +134,47 @@ function isANumber(inp) {
 // }
 // areaOrPerimeter(5, "5");
 
-function sumOfStrings(inp1, inp2) {
-    if (!isANumber(inp1) || !isANumber(inp2)) {
-        return false;
-    } else {
-        return (parseFloat(inp1) + parseFloat(inp2)).toString();
-    }
-}
+// function sumOfStrings(inp1, inp2) {
+//     if (!isANumber(inp1) || !isANumber(inp2)) {
+//         return false;
+//     } else {
+//         return (parseFloat(inp1) + parseFloat(inp2)).toString();
+//     }
+// }
+//
+// console.log(sumOfStrings("3", "2"));
 
-console.log(sumOfStrings("3", "2"));
+// Write a function definition named onlyOddNumbers that takes in sequence of numbers and returns the odd numbers in an array.
+// function onlyOddNumbers (arr) {
+//     for (var i = 0; i < arr.length; i++) {
+//         if (arr[i] % 2 === 0) {
+//             arr.splice(i, 1);
+//         }
+//     }
+//     return arr;
+// }
+// console.log(onlyOddNumbers([1,2,3,4,5,6]))
+
+
+//TODO
+// function onlyOddNumbers(arr) {
+//     arr.forEach(function(num) {
+//         if (num % 2 === 0) {
+//
+//     });
+// }
+
+// for (var i = 0; i < books.length; i++) {
+//     var bookMsg = "Book # " + (i + 1) + "\n" +
+//         "Title " + books[i].title + "\n" +
+//         "Author: " +  books[i].author.firstName + " " + books[i].author.lastName + "\n" + "---";
+//     console.log(bookMsg);
+// }
+
+// books.forEach(function(book, index){
+//     var bookMsg = "Book # " + (index + 1) + "\n" +
+//         "Title " + book.title + "\n" +
+//         "Author: " +  book.author.firstName + " " + book.author.lastName + "\n" + "---";
+//     console.log(bookMsg);
+// });
 
