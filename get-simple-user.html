@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get Simple User</title>
+</head>
+<body>
+
+<script>
+    var chris = {
+        firstName:"Chris",
+        lastName: "Berry",
+        email: "chris@email.com",
+        username: "chrisb",
+        password: "pass"
+    }
+    function getSimpleUser(obj) {
+        return {
+            firstName: obj.firstName,
+            lastName: obj.lastName
+        }
+    }
+
+    console.log(getSimpleUser(chris));
+
+</script>
+
+</body>
+</html>
