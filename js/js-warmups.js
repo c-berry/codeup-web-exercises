@@ -178,3 +178,94 @@
 //     console.log(bookMsg);
 // });
 
+// Create a function, analyzeArray, that takes in an array and returns an object with information about the passed array. The function should return an object with properties containing information about the array, including the lengthOfArray, containsAllStrings, and the combineResult of adding all elements together.
+// analyzeArray([1, 2, 3]) returns...
+// {
+//     lengthOfArray: 3,
+//         containsAllStrings: false,
+//     combineResult: 6
+// }
+// analyzeArray([‘a’, ‘b’, ‘c’]) returns...
+// {
+//     lengthOfArray: 3,
+//         containsAllStrings: true,
+//     combineResult: ‘abc’
+// }
+// analyzeArray([‘bob’, 100, null]) returns...
+// {
+//     lengthOfArray: 3,
+//         containsAllStrings: true,
+//     combineResult: ‘bob123null’
+// }
+
+//function that returns object:
+// var array1 = [1,2,3,4,5];
+// var array2 = ["a", "b", "c", "d"];
+// var array3 = ["bob", 2, NaN];
+//
+// function analyzeArray(arr) {
+//     var lengthOfArray = arr.length;
+//     var containsAllStrings = arr.every(i => (typeof i === "string"));
+//     var combineResult = arr.join("");
+//     return {
+//         lengthOfArray,
+//         containsAllStrings,
+//         combineResult
+//     };
+// }
+// console.log(analyzeArray(array1));
+// console.log(analyzeArray(array2));
+// console.log(analyzeArray(array3));
+
+// var testArray1 = [1, 2, 3];
+// var testArray2 = ['a', 'b', 'c'];
+// var testArray3 = ['bob', 100, null];
+//
+//another example:
+// function analyzeArray(arr) {
+//     var combine;
+//     arr.forEach(function(element, index) {
+//         if (index === 0) {
+//             combine = element;
+//         }
+//         combine += element;
+//     });
+//     return {
+//         lengthOfArray: arr.length,
+//         containsAllStrings: arr.every(function(element) {
+//             return typeof element === 'string';
+//         }),
+//         combineResult: combine
+//     }
+// }
+//
+// console.log(analyzeArray(testArray1));
+// console.log(analyzeArray(testArray2));
+// console.log(analyzeArray(testArray3));
+
+// Create a function, createNames, that takes in an array of first names and an array of last names. The function should return an array of name objects with firstName and lastName properties with the input array values. Assume both input arrays are not empty, the same length and only contain string elements:
+var firstName = ["Beaver","Squid","Cat","Dog"];
+var lastName = ["Beaverson","Squdiddington","Meowson","Woofington"];
+
+// function createNames(arr1,arr2) {
+//     var output = [];
+//     return output.push({
+//         firstName,
+//         lastName
+//     });
+// }
+// console.log(createNames(firstName,lastName));
+
+//SOLUTION:
+// function createNames(arr1,arr2) {
+//     var output = [];
+//     for (var i = 0; i < arr1.length; i += 1) {
+//         output.push({
+//             firstName: arr1[i],
+//             lastName: arr2[i]
+//         });
+//     }
+//     return output;
+// }
+// console.log(createNames(firstName,lastName));
+
