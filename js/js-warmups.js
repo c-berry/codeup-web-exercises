@@ -269,3 +269,21 @@ var lastName = ["Beaverson","Squdiddington","Meowson","Woofington"];
 // }
 // console.log(createNames(firstName,lastName));
 
+// function remainder(inp1,inp2) {
+//     if (inp1 > inp2) {
+//         return inp1 % inp2;
+//     }
+//         return inp2 % inp1;
+// }
+// console.log(remainder(2,5));
+// console.log(remainder("yes",1));
+//
+// //FOR IN LOOP EXAMPLE:
+// function printer_error(str) {
+//     var totalOverM = 0;
+//     for (var i in str) {
+//         if (str[i] > "m") {totalOverM++}
+//     }
+//     return "" + totalOverM + "/" + str.length;
+// }
+// console.log(printer_error("mmmmmmmzzzzzzzz"));
