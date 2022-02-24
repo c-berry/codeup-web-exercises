@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Media Queries</title>
+    <style>
+
+        /* Mobile device styling by default (mobile-first) */
+        body {
+            background-color: yellow;
+            margin: 0;
+            font-size: 1.2em;
+        }
+        main {
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1400px;
+        }
+        div {
+            flex-basis: 100%;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            text-align: center;
+        }
+        div {
+            /*float: left;*/
+            background-color: azure;
+        }
+        h3 {
+            padding: 16px;
+        }
+        p {
+            padding: 16px;
+        }
+
+        /* Small devices (tablets, 768px and up) */
+        /* width of divs should be 50% and background should be red */
+        @media screen and (min-width: 768px) {
+            body {
+                background: red;
+                font-size: 1em;
+            }
+            .container {
+                width: 90%;
+            }
+            div {
+                flex-basis: 50%;
+            }
+        }
+
+        /* Medium devices (desktops, 992px and up) */
+        /* width of divs should be 33.333% and background should be blue */
+        @media screen and (min-width: 992px) {
+            body {
+                background: blue;
+            }
+            div {
+                flex-basis: 33.333%;
+            }
+        }
+
+        /* Large devices (large desktops, 1200px and up) */
+        /* width of divs should be 25% and background should be green */
+        @media screen and (min-width: 1200px) {
+            body {
+                background: green;
+            }
+            div {
+                flex-basis: 25%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Media Queries</h1>
+<main>
+
+    <div>
+        <h3>Heading 1</h3>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti doloribus ea eum magnam neque pariatur, quo voluptatibus! Autem culpa eum magni quibusdam soluta. Blanditiis culpa cupiditate quae quam quisquam voluptate.
+    </div>
+
+    <div>
+        <h3>Heading 2</h3>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti doloribus ea eum magnam neque pariatur, quo voluptatibus! Autem culpa eum magni quibusdam soluta. Blanditiis culpa cupiditate quae quam quisquam voluptate.
+    </div>
+
+    <div>
+        <h3>Heading 3</h3>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti doloribus ea eum magnam neque pariatur, quo voluptatibus! Autem culpa eum magni quibusdam soluta. Blanditiis culpa cupiditate quae quam quisquam voluptate.
+    </div>
+
+    <div>
+        <h3>Heading 4</h3>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti doloribus ea eum magnam neque pariatur, quo voluptatibus! Autem culpa eum magni quibusdam soluta. Blanditiis culpa cupiditate quae quam quisquam voluptate.
+    </div>
+
+    <div>
+        <h3>Heading 5</h3>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti doloribus ea eum magnam neque pariatur, quo voluptatibus! Autem culpa eum magni quibusdam soluta. Blanditiis culpa cupiditate quae quam quisquam voluptate.
+    </div>
+
+    <div>
+        <h3>Heading 6</h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti doloribus ea eum magnam neque pariatur, quo voluptatibus! Autem culpa eum magni quibusdam soluta. Blanditiis culpa cupiditate quae quam quisquam voluptate.
+    </div>
+</main>
+
+</body>
+</html>
