@@ -244,8 +244,8 @@
 // console.log(analyzeArray(testArray3));
 
 // Create a function, createNames, that takes in an array of first names and an array of last names. The function should return an array of name objects with firstName and lastName properties with the input array values. Assume both input arrays are not empty, the same length and only contain string elements:
-var firstName = ["Beaver","Squid","Cat","Dog"];
-var lastName = ["Beaverson","Squdiddington","Meowson","Woofington"];
+// var firstName = ["Beaver","Squid","Cat","Dog"];
+// var lastName = ["Beaverson","Squdiddington","Meowson","Woofington"];
 
 // function createNames(arr1,arr2) {
 //     var output = [];
@@ -287,3 +287,24 @@ var lastName = ["Beaverson","Squdiddington","Meowson","Woofington"];
 //     return "" + totalOverM + "/" + str.length;
 // }
 // console.log(printer_error("mmmmmmmzzzzzzzz"));
+
+// "Your girlscout cookies are ready to ship. Your total comes to tree fiddy"
+// "Your girlscout cookies are ready to ship. Your total comes to tree fiddy"
+// "Yo, I heard you were on the lookout for Nessie. Let me know if you need assistance."
+// function isLochNessMonster(s) {
+//     if (s.includes("tree fiddy")
+//         || s.includes("three fifty") || s.includes(3.50)) {
+//     return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+function isLochNessMonster(s) {
+    return s.includes("tree fiddy") || s.includes("three fifty") || s.includes("3.50");
+}
+
+console.log(isLochNessMonster("Your girlscout cookies are ready to ship. Your total comes to tree fiddy."));
+console.log(isLochNessMonster("you owe me about 3.50."));
+console.log(isLochNessMonster("you owe me three fifty."))
+
