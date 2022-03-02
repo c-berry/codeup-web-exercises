@@ -25,3 +25,19 @@ for (var i = 0; i < allTheButtons.length; i++) {
 //OR:
 var pinkSquare = document.querySelector(".pink-square");
 pinkSquare.addEventListener("click", clickPinkSquare);
+
+
+
+var body = document.querySelector("body");
+
+// function turnPageBlue(event) {
+//     console.log(event.key);
+// }
+function turnPageBlue(k) {
+    if (k.key === "b") {
+        body.style.backgroundColor = "deepskyblue";
+    }
+}
+
+window.addEventListener("keypress",turnPageBlue);
+

@@ -300,11 +300,13 @@
 //     }
 // }
 
-function isLochNessMonster(s) {
-    return s.includes("tree fiddy") || s.includes("three fifty") || s.includes("3.50");
-}
+// function isLochNessMonster(s) {
+//     return s.includes("tree fiddy") || s.includes("three fifty") || s.includes("3.50");
+// }
+//
+// console.log(isLochNessMonster("Your girlscout cookies are ready to ship. Your total comes to tree fiddy."));
+// console.log(isLochNessMonster("you owe me about 3.50."));
+// console.log(isLochNessMonster("you owe me three fifty."))
+//
 
-console.log(isLochNessMonster("Your girlscout cookies are ready to ship. Your total comes to tree fiddy."));
-console.log(isLochNessMonster("you owe me about 3.50."));
-console.log(isLochNessMonster("you owe me three fifty."))
 
