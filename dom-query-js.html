@@ -34,25 +34,57 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+<button>Button 1</button>
+<br>
+<br>
+<button>Button 2</button>
+<br>
+<br>
+<button>Button 3</button>
+<br>
+<br>
+<button>Button 4</button>
+
 <script>
     (function() {
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
+        //RETRIEVE MAIN HEADER INFO:
         var mainHeader = document.getElementById("main-header");
+        //RETRIEVE BUTTON 1 INFO:
+        var button1 = document.querySelectorAll("button")[0];
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerText = "JavaScript is Cool!";
+        //WITHOUT BUTTON:
+        // mainHeader.innerText = "JavaScript is Cool!";
+
+        //WITH BUTTON:
+        function mainHeaderButton(){
+            mainHeader.innerText = "JavaScript is Cool!";
+        }
+        button1.addEventListener("click", mainHeaderButton);
 
         // TODO: Uncomment the next line and get the sub header element by id
+        //SAME PROCESS AS ABOVE:
         var subHeader = document.getElementById("sub-header");
+        var button2 = document.querySelectorAll("button")[1];
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = "blue";
+        //WITHOUT BUTTON
+        // subHeader.style.color = "blue";
+
+        //WITH BUTTON:
+        function subHeaderButton() {
+            subHeader.style.color = "blue";
+        }
+        button2.addEventListener("click", subHeaderButton);
 
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName("li");
+        var button3 = document.querySelectorAll("button")[2];
 
         // TODO: Set text color on every other list item to grey
+        //SET EVERY OTHER LI TO GREY
         // for (var i = 0; i < listItems.length; i++) {
         //     if (i % 2 !== 0)
         //         listItems[i].style.color = "grey";
@@ -61,20 +93,43 @@
         // TODO: Set text color of li with dbid = 1 to blue
         // var listItem1 = listItems[0];
         // listItems[0].style.color = "blue";
-        for (var i = 0; i < listItems.length; i++) {
-            if (i % 2 !== 0) {
-                listItems[i].style.color = "grey";
+
+        //COMBINES GREY AND BLUE TEXT COLOR IN ONE LOOP:
+        // for (var i = 0; i < listItems.length; i++) {
+        //     if (i % 2 !== 0) {
+        //         listItems[i].style.color = "grey";
+        //     }
+        //     if (listItems[i].dataset.dbid === '1') {
+        //         listItems[i].style.color = 'blue'
+        //     }
+        // }
+
+        //USING BUTTON:
+            function setColors() {
+                for (var i = 0; i < listItems.length; i++) {
+                    if (i % 2 !== 0) {
+                        listItems[i].style.color = "grey";
+                    }
+                    if (listItems[i].dataset.dbid === '1') {
+                        listItems[i].style.color = 'blue'
+                    }
+                }
             }
-            if (listItems[i].dataset.dbid === '1') {
-                listItems[i].style.color = 'blue'
-            }
-        }
+            button3.addEventListener("click", setColors);
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName("sub-paragraph");
+        var button4 = document.querySelectorAll("button")[3];
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerText = "Mission accomplished!";
+        //WITHOUT BUTTON:
+        // subParagraphs[0].innerText = "Mission accomplished!";
+
+        //WITH BUTTON:
+        function subParaphButton() {
+            subParagraphs[0].innerText = "Mission accomplished!";
+        }
+        button4.addEventListener("click",subParaphButton);
 
     })();
 </script>
