@@ -5,7 +5,25 @@
     <title>jQuery Exercises</title>
 </head>
 <body>
-<h1>jQuery Exercises</h1>
+<h1 id="main-header">jQuery Exercises</h1>
+<h1>I am header number 2</h1>
+<p id="opening-statement">jQuery is neat.</p>
+<ul class="codeup">
+    <li>One</li>
+    <li>Two</li>
+    <li>Three</li>
+</ul>
+<ul class="codeup">
+    <li>Four</li>
+    <li>Five</li>
+    <li>Six</li>
+</ul>
+<ul class="codeup">
+    <li>Four</li>
+    <li>Five</li>
+    <li>Six</li>
+</ul>
+<div class="container">I am a div.</div>
 
 <!--DIRECT LINK:-->
 <!--<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>-->
@@ -15,13 +33,43 @@
 
 <script>
     "use strict";
-    <!--INCLUDE THIS WITH jQuery FOR EFFICIENCY:-->
+    // INCLUDE THIS WITH jQuery FOR EFFICIENCY:
     $(document).ready(function(){
         console.log(jQuery);
         console.log($);
 
-        alert('page loaded');
+        // var contents = $("h1").html();
+        // alert(contents);
 
+        // $(".codeup").css({
+        //     "border-style": "solid",
+        //     "border-width": "1px",
+        //     "color": "red"
+        // });
+        //OR:
+        // $(".codeup").css("border", "1px solid red");
+
+        // $("li").css({
+        //     "font-size": "20px"
+        // });
+        //OR:
+        $("li").css("font-size", "20px");
+
+        $("h1, ul, p").css({
+            "background-color": "yellow"
+        });
+
+        // var h1Elements = $("h1");
+        // function getH1Elements(index, element) {
+        //     alert(index + $(element).html())
+        // }
+        // h1Elements.each(getH1Elements)
+        // OR:
+        // var h1Elements = $("h1");
+        // alert(h1Elements.next().next().html());
+
+
+    // END OF DOCUMENT READY FUNCTION:
     });
 </script>
 </body>
