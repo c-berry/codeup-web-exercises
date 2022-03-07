@@ -26,18 +26,26 @@ for (var i = 0; i < allTheButtons.length; i++) {
 var pinkSquare = document.querySelector(".pink-square");
 pinkSquare.addEventListener("click", clickPinkSquare);
 
-
-
-var body = document.querySelector("body");
-
 // function turnPageBlue(event) {
 //     console.log(event.key);
 // }
-function turnPageBlue(k) {
+
+var body = document.querySelector("body");
+
+function changePageColor(k) {
     if (k.key === "b") {
         body.style.backgroundColor = "deepskyblue";
     }
+    if (k.key === "g") {
+        body.style.backgroundColor = "green";
+    }
+    if (k.key === "y") {
+        body.style.backgroundColor = "yellow";
+    }
+    if (k.key === "r") {
+        body.style.backgroundColor = "red";
+    }
 }
 
-window.addEventListener("keypress",turnPageBlue);
+window.addEventListener("keypress",changePageColor);
 

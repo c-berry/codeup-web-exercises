@@ -309,4 +309,113 @@
 // console.log(isLochNessMonster("you owe me three fifty."))
 //
 
+//CREATE FUNCTION THAT TAKES AN OBJECT WITH 2 PROPERTIES. parcelNumber, weight, AND RETURNS WEIGHT:
+// var parcel = {
+//     parcelNumber: 1,
+//     weight: 20
+// };
+// function parcelWeight(obj) {
+//     console.log(obj.weight);
+// }
+// parcelWeight(parcel); //OUTPUT: 20
+// CREATE FUNCTION THAT ACCEPTS ARR WITH 2 OBJECTS AND RETURNS TOTAL WEIGHT OF BOTH OBJ:
+// var parcels = [{
+//     number:1, weight: 20}, {number: 2, weight: 25
+// }];
+// function totalWeight(arr) {
+//     var total = 0;
+//     for (var i = 0; i < arr.length; i++) {
+//         total += arr[i].weight;
+//     }
+//     return total;
+// }
+// console.log(totalWeight((parcels)));
+// function outputParcelInfo(parcelsArr) {
+//     var outputDiv = document.getElementById("parcelInfo");
+//     var total = 0;
+//     var html = "<table><tr><th>Parcel Number</th></tr><th>Weight</th>";
+//
+//     outputDiv.innerHTML = html;
+// }
+// outputParcelInfo(parcels);
 
+//DOM WARMUP:
+//CREATE HEADING "GOOD MORNING
+//CREATE BUTTON SAYS "PRESS IF AFTER 12PM"
+//WHEN BUTTON IS PRESSED CHANGES "GM" TO "GA"
+// var btn = document.querySelector("button");
+//
+// function goodMorning() {
+//     document.querySelector("h1").innerText = "Good Afternoon!";
+// }
+// btn.addEventListener("click", goodMorning);
+
+// Consider the following array of users:
+    var users = [
+        {
+            username: 'fsmith',
+            email: 'fsmith@email.com',
+            numberOfLogins: 23
+        },
+        {
+            username: 'ksmith',
+            email: 'ksmith@email.com',
+            numberOfLogins: 100
+        },
+        {
+            username: 'lsmith',
+            email: 'lsmith@email.com',
+            numberOfLogins: 10
+        }
+    ];
+
+// 1. Create a function, returnFirstUser, that takes in an array of user objects and returns the first user object:
+// function returnFirstUser(users) {
+//     return users[0];
+// }
+// console.log(returnFirstUser(users)); //WORKS
+
+// 2. Create a function, returnTotalUserLogins, that takes in an array of user objects and returns the total count of logins
+// for all users.
+// returnTotalUserLogins(users) should return... 133
+
+// function returnTotalUserLogins(users){
+//     var total = 0;
+//     for(var i = 0; i < users.length; i++){
+//         total += users[i].numberOfLogins;
+//     }
+//     return total;
+// }
+// console.log(returnTotalUserLogins(users)); //WORKS
+
+// 3. (optional bonus) create a function, returnMostFrequentUser, that takes in an array of user objects and returns the
+// user object with the highest number of logins:
+// function  returnMostFrequentUser(users) {
+//         var total = Math.max.apply(Math, users.map(function(o) {
+//         return o.numberOfLogins; }));
+//         for (var i = 0; i < users.length; i++) {
+//             if (users[i].numberOfLogins === total) {
+//                 return users[i];
+//             }
+//         }
+// }
+// console.log(returnMostFrequentUser(users)); //WORKS
+
+// function returnMostFrequentUser(users){
+//     let mostFrequentUser = users.sort((a, b) => b.numberOfLogins - a.numberOfLogins);
+//     return mostFrequentUser[0];
+// }
+// console.log(returnMostFrequentUser(users));
+
+var isColdOutside = true;
+// var clothingToWear;
+//
+// if (isColdOutside) {
+//     clothingToWear = 'sweater and a jacket';
+// } else {
+//     clothingToWear = 'shorts and a t-shirt';
+// }
+// CAN BE WRITTEN THIS WAY:
+var clothingToWear = isColdOutside ? 'sweater and a jacket' : 'shorts and a t-shirt';
+
+console.log(clothingToWear);
