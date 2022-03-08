@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+
+    var konamiCode = [
+        38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13
+    ];
+    var i = 0
+
+    $(document).keyup(function(e){
+        console.log(e.keyCode);
+        if (e.keyCode === konamiCode[i]) {
+            i++;
+            console.log(i)
+        } if (i === konamiCode.length) {
+            activateCheatCode();
+            i = 0;
+        }
+    });
+
+    function activateCheatCode() {
+        alert("You have added 30 lives!");
+        var changingColors = ["red", "blue", "green"]
+        var index = 0
+        $("body").css({
+            "background-color": "purple"
+        });
+    }
+    var changingColors = ["red", "blue", "green"]
+    var index = 0
+    function colors() {
+        if (index >= changingColors.length) {
+            clearInterval(timer);
+        }
+        background.style.backgroundColor = changingColors[index++]
+    }
+
+    var timer = setInterval(colors, 1000);
+
+</script>
+</body>
+</html>
