@@ -368,26 +368,22 @@
             numberOfLogins: 10
         }
     ];
-
 // 1. Create a function, returnFirstUser, that takes in an array of user objects and returns the first user object:
 // function returnFirstUser(users) {
 //     return users[0];
 // }
 // console.log(returnFirstUser(users)); //WORKS
-
 // 2. Create a function, returnTotalUserLogins, that takes in an array of user objects and returns the total count of logins
 // for all users.
 // returnTotalUserLogins(users) should return... 133
-
-// function returnTotalUserLogins(users){
-//     var total = 0;
-//     for(var i = 0; i < users.length; i++){
-//         total += users[i].numberOfLogins;
-//     }
-//     return total;
-// }
-// console.log(returnTotalUserLogins(users)); //WORKS
-
+function returnTotalUserLogins(users){
+    var total = 0;
+    for(var i = 0; i < users.length; i++){
+        total += users[i].numberOfLogins;
+    }
+    return total;
+}
+console.log(returnTotalUserLogins(users)); //WORKS
 // 3. (optional bonus) create a function, returnMostFrequentUser, that takes in an array of user objects and returns the
 // user object with the highest number of logins:
 // function  returnMostFrequentUser(users) {
@@ -399,15 +395,36 @@
 //             }
 //         }
 // }
-// console.log(returnMostFrequentUser(users)); //WORKS
+function returnMostFrequentUser(user) {
+    var mostFrequentUser = users[0];
+    for (var i = 0; i < user.length; i++) {
+        if (user[i].numberOfLogins > mostFrequentUser.numberOfLogins) {
+            mostFrequentUser = user;
+        }
+    }
+    return mostFrequentUser;
+}
+console.log(returnMostFrequentUser(users));
 
+function returnMostFrequentUser2(users) {
+    var mostFrequentUser = users[0];
+    users.forEach(function(user) {
+        // console.log(user.numberOfLogins, mostFrequentUser.numberOfLogins)
+        // console.log(user.numberOfLogins > mostFrequentUser.numberOfLogins);
+        if (user.numberOfLogins > mostFrequentUser.numberOfLogins) {
+            mostFrequentUser = user;
+        }
+    });
+    return mostFrequentUser;
+}
+console.log(returnMostFrequentUser2(users)); //WORKS
 // function returnMostFrequentUser(users){
 //     let mostFrequentUser = users.sort((a, b) => b.numberOfLogins - a.numberOfLogins);
 //     return mostFrequentUser[0];
 // }
 // console.log(returnMostFrequentUser(users));
 
-var isColdOutside = true;
+// var isColdOutside = true;
 // var clothingToWear;
 //
 // if (isColdOutside) {
@@ -416,6 +433,87 @@ var isColdOutside = true;
 //     clothingToWear = 'shorts and a t-shirt';
 // }
 // CAN BE WRITTEN THIS WAY:
-var clothingToWear = isColdOutside ? 'sweater and a jacket' : 'shorts and a t-shirt';
+// var clothingToWear = isColdOutside ? 'sweater and a jacket' : 'shorts and a t-shirt';
+//
+// console.log(clothingToWear);
 
-console.log(clothingToWear);
+// Create a function, computeOperations, that takes in an array of operation objects and a starting integer value and returns an integer after all the calculations have completed, using the second integer argument as the first operand. Each operation object will have the following shape:
+// Example 1...
+// var operations1 = [
+//     {
+//         operation: 'add',
+//         integer: 7
+//     },
+//     {
+//         operation: 'add',
+//         integer: 3
+//     }
+//     ];
+//WORKS:
+// function computeOperation(arr, int) {
+//     var total = int; //MUST HAVE VARIABLE TO STORE INFO:
+//     for (var i = 0; i < arr.length; i++) {
+//         if (arr[i].operation === "add") {
+//             total += arr[i].integer;
+//         } if (arr[i].operation === "subtract") {
+//             total -= arr[i].integer;
+//         } if (arr[i].operation === "multiply") {
+//             total *= arr[i].integer;
+//         }
+//     }
+//     return total;
+// }
+//ALSO WORKS:
+// function computeOperation(operators, startingInt) {
+//     var total = startingInt;
+//     operators.forEach(function (op){
+//         if (op.operation === "add") {
+//             total += op.integer;
+//             // console.log("add int");
+//         } if (op.operation === "subtract") {
+//             total -= op.integer;
+//             // console.log("sub int");
+//         } if (op.operation === "multiply") {
+//             total *= op.integer;
+//             // console.log("* int");
+//         }
+//         // console.log(op.integer);
+//         // console.log(op.operation);
+//     });
+//     return total;
+//     }
+// console.log(computeOperation(operations1,10));
+// Example 2...
+// var operations2 = [
+//
+//     {
+//         operation: 'add',
+//         integer: 7
+//     },
+//     {
+//         operation: 'add',
+//         integer: 3
+//     },
+//     {
+//         operation: 'multiply',
+//         integer: 3
+//     },
+// ];
+// console.log(computeOperation(operations2, 10));
+// Example 3...
+// var operations3 = [
+//
+//     {
+//         operation: 'subtract',
+//         integer: 5
+//     },
+//     {
+//         operation: 'multiply',
+//         integer: -2
+//     },
+//     {
+//         operation: 'add',
+//         integer: 10
+//     },
+// ];
+// console.log(computeOperation(operations3, 10));
