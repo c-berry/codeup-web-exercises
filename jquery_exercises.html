@@ -8,6 +8,7 @@
 <h1 id="main-header">jQuery Exercises</h1>
 <h1>I am header number 2</h1>
 <p id="opening-statement">jQuery is neat.</p>
+<p>Wow do I love jQuery!</p>
 <ul class="codeup">
     <li>One</li>
     <li>Two</li>
@@ -35,8 +36,8 @@
     "use strict";
     // INCLUDE THIS WITH jQuery FOR EFFICIENCY:
     $(document).ready(function(){
-        console.log(jQuery);
-        console.log($);
+        // console.log(jQuery);
+        // console.log($);
 
         // var contents = $("h1").html();
         // alert(contents);
@@ -53,11 +54,11 @@
         //     "font-size": "20px"
         // });
         //OR:
-        $("li").css("font-size", "20px");
-
-        $("h1, ul, p").css({
-            "background-color": "yellow"
-        });
+        // $("li").css("font-size", "20px");
+        //
+        // $("h1, ul, p").css({
+        //     "background-color": "yellow"
+        // });
 
         // var h1Elements = $("h1");
         // function getH1Elements(index, element) {
@@ -67,6 +68,26 @@
         // OR:
         // var h1Elements = $("h1");
         // alert(h1Elements.next().next().html());
+
+        $("h1").click(function (e){
+            $(this).css({
+                "background-color": "red"
+            });
+        });
+        $("p").dblclick(function (e){
+            $("p").css({
+                "font-size": "18px"
+            });
+        });
+        $("li").hover(function(){
+            $("li").css({
+                "color": "red"
+            });
+        }, function(){
+            $("li").css({
+                "color": "black"
+            });
+        });
 
 
     // END OF DOCUMENT READY FUNCTION:
