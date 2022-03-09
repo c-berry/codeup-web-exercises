@@ -42,15 +42,14 @@
     $(document).keyup(function(e){
         console.log("log1",e.keyCode);
         console.log("log2",i);
-        console.log("log3",konamiCode.length);
         if (e.keyCode === konamiCode[i]) {
             i++;
         } if (i === konamiCode.length) {
-            console.log("log4", i);
+            console.log("log3", i);
             alert("Cheat code activated!")
             activateCheatCode();
             i = 0;
-        } if (e.keyCode !== konamiCode[i] && i === 11) {
+        } if (e.keyCode !== konamiCode[i]) {
             location.reload();
         }
     });

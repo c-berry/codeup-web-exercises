@@ -17,6 +17,10 @@
             color: blue;
         }
 
+        li:hover {
+            color: red;
+        }
+
         .invisible {
             visibility: hidden;
         }
@@ -24,6 +28,12 @@
         .highlight {
             background-color: yellow;
         }
+
+        .blue-text {
+            color: blue;
+        }
+
+
 
     </style>
 </head>
@@ -76,21 +86,61 @@
 
 <button id="toggle-btn">Toggle Answers</button>
 
+<h3>Park 1</h3>
+<ul>
+    <li>This is a fun fact about Park 1.</li>
+    <li>This is a fun fact about Park 1.</li>
+    <li>This is a fun fact about Park 1.</li>
+    <li>This is a fun fact about Park 1.</li>
+</ul>
+<h3>Park 2</h3>
+<ul>
+    <li>This is a funner fact about Park 2</li>
+    <li>This is a funner fact about Park 2</li>
+    <li>This is a funner fact about Park 2</li>
+    <li>This is a funner fact about Park 2</li>
+</ul>
+<h3>Park 3</h3>
+<ul>
+    <li>This is the most fun fact about Park 3</li>
+    <li>This is the most fun fact about Park 3</li>
+    <li>This is the most fun fact about Park 3</li>
+    <li>This is the most fun fact about Park 3</li>
+</ul>
+
+<button id="list-btn">Toggle Factoids</button>
+
 <script src="js/jquery-2.2.4.js"></script>
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
 
-        //REGULAR SCRIPT BEGINS:
-    $("#toggle-btn").click(function (){
+        //EXERCISE:
+    $("#toggle-btn").click(function() {
         $("dd").toggleClass("invisible");
     });
 
-    $("dt").click(function (){
+    $("dt").click(function() {
         $("dt").removeClass("highlight")
         $(this).addClass("highlight")
     });
 
+    //EXERCISE:
+    $("#list-btn").click(function() {
+        $("ul").each(function (index, li) {
+            $(li).children().last().toggleClass("highlight");
+            });
+    });
+
+        $("h3").click(function () {
+            $(this).next().css({
+                "font-weight": "bold"
+            });
+        });
+
+        $("ul").click(function () {
+            $(this).children().first().toggleClass("blue-text");
+        });
 
     //DOCUMENT.READY ENDS HERE:
     });
