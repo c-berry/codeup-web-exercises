@@ -4,7 +4,31 @@
     <title>Konami Code</title>
 </head>
 <body>
-<h1>Konami Code</h1>
+<h1 id="hidden"
+    style="font-size: 100px;
+    text-align: center;
+    display: none">
+    NEW HIGH SCORE!</h1>
+<div style="text-align: center">
+    <img id="konami-code-img" src="img/konami-code.jpg">
+</div>
+<div style="text-align: center">
+    <img id="yoshi-gif"
+         src="img/yoshi.webp"
+         style="display: none">
+</div>
+<div id="play-again"
+    style="background-color: white;
+    margin-left: 0;
+    margin-right: 0;
+    display: none;
+    height: 20px;
+    width: 100%;
+    text-align: center">
+    > Click To Play Again <</div>
+
+<audio id="theme-music"
+       src="audio/menu-theme.mp3"></audio>
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
@@ -19,31 +43,32 @@
         console.log(e.keyCode);
         if (e.keyCode === konamiCode[i]) {
             i++;
-            console.log(i)
         } if (i === konamiCode.length) {
+            alert("Cheat code activated!")
             activateCheatCode();
             i = 0;
         }
     });
 
-    function activateCheatCode() {
-        alert("You have added 30 lives!");
-        var changingColors = ["red", "blue", "green"]
-        var index = 0
+    function changeColor(){
+        var arr = ["red", "hotpink", "rebeccapurple", "blue", "cyan", "green", "yellow", "orange"];
         $("body").css({
-            "background-color": "purple"
+            backgroundColor : arr[parseInt(Math.random() * 8)]
         });
     }
-    var changingColors = ["red", "blue", "green"]
-    var index = 0
-    function colors() {
-        if (index >= changingColors.length) {
-            clearInterval(timer);
-        }
-        background.style.backgroundColor = changingColors[index++]
+
+    function activateCheatCode() {
+        setInterval(changeColor,600);
+        $("audio#theme-music")[0].play();
+        $("img#konami-code-img").hide();
+        $("h1").show();
+        $("#play-again").show();
+        $("img#yoshi-gif").show();
     }
 
-    var timer = setInterval(colors, 1000);
+    $('#play-again').click(function() {
+        location.reload();
+    });
 
 </script>
 </body>
