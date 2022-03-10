@@ -113,22 +113,22 @@
 <script src="js/jquery-2.2.4.js"></script>
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
 
         //EXERCISE:
-    $("#toggle-btn").click(function() {
+    $("#toggle-btn").click(function () {
         $("dd").toggleClass("invisible");
     });
 
-    $("dt").click(function() {
+    $("dt").click(function () {
         $("dt").removeClass("highlight")
         $(this).addClass("highlight")
     });
 
     //EXERCISE:
-    $("#list-btn").click(function() {
-        $("ul").each(function (index, li) {
-            $(li).children().last().toggleClass("highlight");
+    $("#list-btn").click(function () {
+        $("ul").each(function (i, e) {
+            $(e).children().last().toggleClass("highlight");
             });
     });
 
@@ -138,8 +138,8 @@
             });
         });
 
-        $("ul").click(function () {
-            $(this).children().first().toggleClass("blue-text");
+        $("li").click(function () {
+            $(this).parent().children().first().toggleClass("blue-text");
         });
 
     //DOCUMENT.READY ENDS HERE:

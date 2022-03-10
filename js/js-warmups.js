@@ -376,14 +376,14 @@
 // 2. Create a function, returnTotalUserLogins, that takes in an array of user objects and returns the total count of logins
 // for all users.
 // returnTotalUserLogins(users) should return... 133
-function returnTotalUserLogins(users){
-    var total = 0;
-    for(var i = 0; i < users.length; i++){
-        total += users[i].numberOfLogins;
-    }
-    return total;
-}
-console.log(returnTotalUserLogins(users)); //WORKS
+// function returnTotalUserLogins(users){
+//     var total = 0;
+//     for(var i = 0; i < users.length; i++){
+//         total += users[i].numberOfLogins;
+//     }
+//     return total;
+// }
+// console.log(returnTotalUserLogins(users)); //WORKS
 // 3. (optional bonus) create a function, returnMostFrequentUser, that takes in an array of user objects and returns the
 // user object with the highest number of logins:
 // function  returnMostFrequentUser(users) {
@@ -395,29 +395,29 @@ console.log(returnTotalUserLogins(users)); //WORKS
 //             }
 //         }
 // }
-function returnMostFrequentUser(user) {
-    var mostFrequentUser = users[0];
-    for (var i = 0; i < user.length; i++) {
-        if (user[i].numberOfLogins > mostFrequentUser.numberOfLogins) {
-            mostFrequentUser = user;
-        }
-    }
-    return mostFrequentUser;
-}
-console.log(returnMostFrequentUser(users));
-
-function returnMostFrequentUser2(users) {
-    var mostFrequentUser = users[0];
-    users.forEach(function(user) {
-        // console.log(user.numberOfLogins, mostFrequentUser.numberOfLogins)
-        // console.log(user.numberOfLogins > mostFrequentUser.numberOfLogins);
-        if (user.numberOfLogins > mostFrequentUser.numberOfLogins) {
-            mostFrequentUser = user;
-        }
-    });
-    return mostFrequentUser;
-}
-console.log(returnMostFrequentUser2(users)); //WORKS
+// function returnMostFrequentUser(user) {
+//     var mostFrequentUser = users[0];
+//     for (var i = 0; i < user.length; i++) {
+//         if (user[i].numberOfLogins > mostFrequentUser.numberOfLogins) {
+//             mostFrequentUser = user;
+//         }
+//     }
+//     return mostFrequentUser;
+// }
+// console.log(returnMostFrequentUser(users));
+//
+// function returnMostFrequentUser2(users) {
+//     var mostFrequentUser = users[0];
+//     users.forEach(function(user) {
+//         // console.log(user.numberOfLogins, mostFrequentUser.numberOfLogins)
+//         // console.log(user.numberOfLogins > mostFrequentUser.numberOfLogins);
+//         if (user.numberOfLogins > mostFrequentUser.numberOfLogins) {
+//             mostFrequentUser = user;
+//         }
+//     });
+//     return mostFrequentUser;
+// }
+// console.log(returnMostFrequentUser2(users)); //WORKS
 // function returnMostFrequentUser(users){
 //     let mostFrequentUser = users.sort((a, b) => b.numberOfLogins - a.numberOfLogins);
 //     return mostFrequentUser[0];
@@ -517,3 +517,34 @@ console.log(returnMostFrequentUser2(users)); //WORKS
 //     },
 // ];
 // console.log(computeOperation(operations3, 10));
+
+// Create a function, addTwos, that takes in an array of integers and returns the sum of all 2s in the array. If no 2s are in the array, return 0.
+
+// Examples:
+
+var nums1 = [1, 2, 3, 4, 5];
+var nums2 = [2, 2, 3, 4, 5];
+var nums3 = [10, 0, -5, 4, 5];
+var nums4 = [2, 2, -5, 2, 2];
+var nums5 = [2, 2, 2, 2, 2];
+
+//  WORKS:
+function addTwos(arr, num) {
+    var total = 0;
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] === num) {
+            total += arr[i];
+        }
+    }
+    return total;
+}
+console.log(addTwos(nums1, 2));
+console.log(addTwos(nums2, 2));
+console.log(addTwos(nums3,2));
+console.log(addTwos(nums4,2));
+console.log(addTwos(nums5,2));
+// addTwos(nums1) // returns 2
+// addTwos(nums2) // returns 4
+// addTwos(nums3) // returns 0
+// addTwos(nums4) // returns 8
+// addTwos(nums5) // returns 10
