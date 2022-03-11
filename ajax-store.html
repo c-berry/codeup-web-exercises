@@ -9,24 +9,33 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <style>
+        body {
+            background-image: url("img/tools.jpeg");
+        }
+        hr{
+            color: whitesmoke;
+        }
         h1 {
             text-align: center;
             font-family: Charter ;
+            color: whitesmoke;
         }
         table {
             /*display: none;*/
-            /*background-color: black;*/
+            background-color: whitesmoke;
+            /*color: whitesmoke;*/
             width: 100%;
         }
         td {
             /*background-color: black;*/
-            /*color: white;*/
+            /*color: whitesmoke;*/
             /*width: 30%;*/
             padding: .3em;
 
         }
         th, tr {
             text-align: center;
+            /*color: whitesmoke;*/
         }
         th {
             font-weight: bolder;
@@ -37,16 +46,19 @@
         tbody {
 
         }
+        .invisible {
+            display: none;
+        }
 
     </style>
 </head>
 <body>
 
-<h1 class="mt-2 mb-5 display-2">My Tool Store</h1>
+<h1 class="mt-2 mb-5 display-2">Tool Shoppe</h1>
 <hr>
 <div class="container">
     <table class="container table table-bordered table-hover" id="products">
-        <thead class="table-hover">
+        <thead class="r">
             <tr>
                 <th>Title</th>
                 <th>Quantity</th>
@@ -54,13 +66,15 @@
                 <th>Categories</th>
             </tr>
         </thead>
-        <tbody id="insertProducts" class=""></tbody>
+        <tbody id="insertProducts" class="invisible"></tbody>
     </table>
 </div>
 <!--<hr>-->
 <div class="container d-flex justify-content-center mt-3">
-    <button id="update" class="btn-primary mt-3">Show Inventory</button>
+    <button id="update" class="btn-light mt-3">Inventory</button>
 </div>
+
+<!--<img src="img/tools.jpeg" class="tools">-->
 
 <script src="js/jquery-2.2.4.js"></script>
 
@@ -81,6 +95,7 @@
     // DISPLAY DATA BUTTON:
     $("#update").click(function () {
         displayInventory();
+        $("tbody").toggleClass("invisible");
     });
 
     //RETRIEVES JSON DATA AND CALLS FUNCTION TO BUILD AND DISPLAY DATA ON PAGE:
