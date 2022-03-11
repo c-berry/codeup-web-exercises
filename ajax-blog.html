@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<div id="posts"></div>
+<div id="posts" class="d-flex flex-column"></div>
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
@@ -22,13 +22,13 @@
     function cycleData(data) {
         var html = "";
         for (var i = 0; i < data.length; i++) {
-            html += "<div>"
+            html += "<div class='display-4 my-4'>"
                 + data[i].title
                 + "</div><div>"
                 + data[i].content
                 + "</div><div>"
                 + data[i].categories.join(", ")
-                + "</div><div>"
+                + "</div><div class='my-4'>"
                 + data[i].date
                 + "</div>"
         }
