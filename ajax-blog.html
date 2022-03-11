@@ -12,15 +12,18 @@
 </head>
 <body>
 
+<!--DATA OUTPUT GOES HERE:-->
 <div id="posts" class="card d-flex flex-column"></div>
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
 
+    //OUTPUTS DATA:
     $.get("data/blog.json").done(function (data) {
         $("#posts").html(cycleData(data));
     });
 
+    //RETRIEVES JSON DATA:
     function cycleData(data) {
         var html = "";
         for (var i = 0; i < data.length; i++) {
@@ -29,13 +32,15 @@
                 + "</div><div class='card-body'>"
                 + data[i].content
                 + "</div>"
-                + "<div class='card-body'>"
+                + "<details class='ms-3'><summary>Notes</summary>"
+                + "<div class='card-body'><div class='blockquote-footer'>"
                 + data[i].categories.join(", ")
                 + " <i class=\"fa-solid fa-ice-cream\"></i>"
                 + "</div>"
-                + "<div class='card-body'>"
+                + "<div class='blockquote-footer'>"
                 + data[i].date
-                + "</div><br>"
+                + "</div></div>"
+                + "</details>"
         }
         return html;
     }

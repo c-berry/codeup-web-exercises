@@ -75,7 +75,6 @@
 </div>
 
 <!--<img src="img/tools.jpeg" class="tools">-->
-
 <script src="js/jquery-2.2.4.js"></script>
 
 <script>
@@ -89,16 +88,15 @@
     //     console.log(inventory[0].title)
     // });
 
-
     // TODO: Take the data from inventory.json and append it to the products table
 
-    // DISPLAY DATA BUTTON:
+    // TOGGLE DATA BUTTON:
     $("#update").click(function () {
         displayInventory();
         $("tbody").toggleClass("invisible");
     });
 
-    //RETRIEVES JSON DATA AND CALLS FUNCTION TO BUILD AND DISPLAY DATA ON PAGE:
+    //RETRIEVES JSON DATA AND DISPLAY DATA ON PAGE BY CALLING cycleInventory FUNCTION:
     function displayInventory() {
         $.get("data/inventory.json").done(function (inventory) {
             $("#insertProducts").html(cycleInventory(inventory));
@@ -121,6 +119,8 @@
         }
         return html;
     }
+
+
 
 //IIFE:
 })();
