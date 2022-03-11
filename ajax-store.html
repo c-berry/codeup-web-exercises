@@ -11,6 +11,7 @@
     <style>
         h1 {
             text-align: center;
+            font-family: Charter ;
         }
         table {
             /*display: none;*/
@@ -18,14 +19,22 @@
             width: 100%;
         }
         td {
+            /*background-color: black;*/
             /*color: white;*/
-            width: 30%;
+            /*width: 30%;*/
             padding: .3em;
+
         }
         th, tr {
             text-align: center;
         }
+        th {
+            font-weight: bolder;
+        }
         button {
+            width: 50%;
+        }
+        tbody {
 
         }
 
@@ -33,11 +42,11 @@
 </head>
 <body>
 
-<h1 class="mt-2 mb-5">My Tool Store</h1>
+<h1 class="mt-2 mb-5 display-2">My Tool Store</h1>
 <hr>
 <div class="container">
-    <table class="container" id="products">
-        <thead>
+    <table class="container table table-bordered table-hover" id="products">
+        <thead class="table-hover">
             <tr>
                 <th>Title</th>
                 <th>Quantity</th>
@@ -45,55 +54,60 @@
                 <th>Categories</th>
             </tr>
         </thead>
-        <tbody id="insertProducts"></tbody>
+        <tbody id="insertProducts" class=""></tbody>
     </table>
 </div>
-<hr>
+<!--<hr>-->
 <div class="container d-flex justify-content-center mt-3">
-    <button id="update" class="btn-primary mt-3">Update</button>
+    <button id="update" class="btn-primary mt-3">Show Inventory</button>
 </div>
 
 <script src="js/jquery-2.2.4.js"></script>
 
 <script>
+//IIFE:
 (function() {
     "use strict";
     // TODO: Create an AJAX GET request for the file under data/inventory.json
 
-    $.get("data/inventory.json").done(function (inventory){
-        console.log(inventory);
-        console.log(inventory[0].title)
-    });
+    // $.get("data/inventory.json").done(function (inventory){
+    //     console.log(inventory);
+    //     console.log(inventory[0].title)
+    // });
 
 
     // TODO: Take the data from inventory.json and append it to the products table
 
-    // $.get("data/inventory.json").done(function (inventory){
-    //     $("#insertProducts").html("<tr><td>" + inventory[0].title + "</td></tr><tr><td>" + inventory[0].title + "</td></tr><tr><td>" + inventory[0].title + "</td></tr>");
-    // });
+    // DISPLAY DATA BUTTON:
+    $("#update").click(function () {
+        displayInventory();
+    });
 
-    function updateInventory() {
+    //RETRIEVES JSON DATA AND CALLS FUNCTION TO BUILD AND DISPLAY DATA ON PAGE:
+    function displayInventory() {
         $.get("data/inventory.json").done(function (inventory) {
             $("#insertProducts").html(cycleInventory(inventory));
         });
     }
 
+    //BUILDS TABLE DATA BY LOOPING THRU INVENTORY:
     function cycleInventory(inventory) {
         var html = "";
         for (var i = 0; i < inventory.length; i++) {
-            html += "<tr><td>" + inventory[i].title + "</td><td>" + inventory[i].quantity + "</td><td>" + inventory[i].price + "</td><td>" + inventory[i].categories.join(", ") + "</td></tr>"
+            html += "<tr><td>"
+                + inventory[i].title
+                + "</td><td>"
+                + inventory[i].quantity
+                + "</td><td>"
+                + inventory[i].price
+                + "</td><td>"
+                + inventory[i].categories.join(", ")
+                + "</td></tr>"
         }
         return html;
     }
 
-    // REFRESH DATA BUTTON:
-    $("#update").click(function () {
-        updateInventory();
-    });
-
-    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-    //             its contents and fields
-    //       HINT: You will want to target #insertProducts for your new HTML elements
+//IIFE:
 })();
 </script>
 
