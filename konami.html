@@ -49,11 +49,13 @@
             alert("Cheat code activated!")
             activateCheatCode();
             i = 0;
+            //WORK IN PROGRESS:
         // } if (e.keyCode !== konamiCode[i]) {
         //     location.reload();
         }
     });
 
+    // CYCLES THRU ARRAY OF COLORS RANDOMLY:
     function changeColor(){
         var arr = ["red", "hotpink", "rebeccapurple", "blue", "cyan", "green", "yellow", "orange"];
         $("body").css({
@@ -61,6 +63,7 @@
         });
     }
 
+    // HIDES AND SHOWS CERTAIN ELEMENTS:
     function activateCheatCode() {
         setInterval(changeColor,600);
         $("audio#theme-music")[0].play();
@@ -70,6 +73,7 @@
         $("img#yoshi-gif").show();
     }
 
+    // REFRESH PAGE ON CLICK:
     $('#play-again').click(function() {
         location.reload();
     });
