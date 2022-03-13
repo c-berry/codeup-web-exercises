@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--LINKS TO MAPBOX:-->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        #map {
+            width: 100%;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+<!--CONTAINS MAP-->
+<div id='map'></div>
+<!--LINKS TO NECESSARY MAP SCRIPTS:-->
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="js/keys.js"></script>
+<script>
+    "use strict";
+    mapboxgl.accessToken = MAPBOX_API_TOKEN;
+
+// BASIC TEMPLATE OF STARTING MAP IN S.A.
+    // var map = new mapboxgl.Map({
+    //     container: 'map', // container ID
+    //     style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    //     center: [-98.4916, 29.4260], // starting position [lng, lat]
+    //     zoom: 10 // starting zoom
+    // });
+
+    geocode("San Antonio, Texas", MAPBOX_API_TOKEN).then(function (data) {
+        map.setCenter([data[0], data[1]]);
+        map.setZoom(12);
+        map.setStyle('mapbox://styles/mapbox/streets-v11');
+    });
+
+</script>
+</body>
+</html>
