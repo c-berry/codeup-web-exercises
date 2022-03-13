@@ -3,12 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <title>First Map</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
 
+<!--CREATES SIZE OF MAP:-->
+<div id='map' style='width: 700px; height: 500px;'></div>
+
+<!--LINKS TO MAPBOX:-->
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
 <script src="js/keys.js"></script>
 <script>
     "use strict";
+
+    // ACCESSES API TOKEN:
+    mapboxgl.accessToken = MAPBOX_API_TOKEN;
+    //SETS MAP CUSTOMIZATION:
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-98.4916, 29.4252], // starting position [lng, lat]
+        zoom: 9 // starting zoom
+    });
+
+    // ADDS MARKERS:
+    var markers = [];
+    function addMarker(long, lat) {
+        var marker = new mapboxgl.Marker()
+            .setLngLat([long, lat])
+            .addTo(map);
+        markers.push(marker);
+    }
+
+    // -98.4916, 29.4260
+
+    // setTimeout(function (){
+    //     map.setCenter([-95.7129, 37.0902]);
+    //     map.setZoom(3);
+    //     map.setStyle('mapbox://styles/mapbox/satellite-streets-v11');
+    // }, 5000);
+
+    geocode("The Alamo San Antonio", MAPBOX_API_TOKEN).then(function (data) {
+        console.log(data);
+    });
+    geocode("Paris, Texas", MAPBOX_API_TOKEN).then(function (data){
+        console.log(data);
+    });
+    geocode("Disney World", MAPBOX_API_TOKEN).then(function (data){
+        console.log(data);
+    });
+
+    var lng = -95.5555;
+    var lat = 33.6618;
+    reverseGeocode({lng: lng, lat: lat}, MAPBOX_API_TOKEN).then(function(data) {
+        console.log(data);
+    });
+
+
 
 
 

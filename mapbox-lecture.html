@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Map</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        #map {
+            width: 100%;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+
+<div id='map'></div>
+<!--LINKS TO MAPBOX:-->
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="js/keys.js"></script>
+<script>
+    "use strict";
+
+    mapboxgl.accessToken = MAPBOX_API_TOKEN;
+
+
+    // ========== MINI-EXERCISE 1 Solution
+
+    // var map = new mapboxgl.Map({
+    //     container: 'map', // container ID
+    //     style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    //     center: [-98.9370, 29.5615], // starting position [lng, lat]
+    //     zoom: 12 // starting zoom
+    // });
+
+    // setTimeout(function() {
+    //     map.setCenter([-95.7129, 37.0902]);
+    //     map.setZoom(3);
+    //     map.setStyle('mapbox://styles/mapbox/satellite-v9');
+    // }, 5000);
+
+
+    // ==========  Markers
+
+    // var map = new mapboxgl.Map({
+    //     container: 'map', // container ID
+    //     style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    //     center: [-98.9370, 29.5615], // starting position [lng, lat]
+    //     zoom: 12 // starting zoom
+    // });
+
+
+    // var markers = [];
+
+    // // add marker to list of markers
+    // function addMarker(longitude, latitude) {
+    //     var marker = new mapboxgl.Marker()
+    //         .setLngLat([longitude, latitude])
+    //         .addTo(map);
+    //     markers.push(marker);
+    // }
+
+
+    // // Adding event listeners to the map
+    // map.on('click', function() {
+    //     alert('Clicked on the map!');
+    // });
+
+
+    // ==========  Popups
+
+    // Create a marker for Whiskey Cake and add a popup with info about it
+
+    // var map = new mapboxgl.Map({
+    //     container: 'map', // container ID
+    //     style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    //     center: [-97.5431, 35.5230], // starting position [lng, lat]
+    //     zoom: 17 // starting zoom
+    // });
+
+
+    // create a marker
+
+    // var marker = new mapboxgl.Marker()
+    //     .setLngLat([-97.5431, 35.5230])
+    //     .addTo(map);
+
+    // create a popup
+    // var popup = new mapboxgl.Popup()
+    //     .setHTML('<h1 style="color: red">Whiskey Cake</h1><a href="https://whiskeycake.com/">Website</a>');
+    //
+    // marker.setPopup(popup);
+
+    // ===================Mini - Exercise 2===========================
+
+    // In this file, create a Mapbox map that shows Washington D.C. and places a marker on the Lincoln Memorial.
+
+    // var map = new mapboxgl.Map({
+    //     container: 'map', // container ID
+    //     style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    //     center: [-77.0369, 38.9072], // starting position [lng, lat]
+    //     zoom: 10 // starting zoom
+    // });
+    //
+    // var marker = new mapboxgl.Marker({
+    //     draggable: true
+    // }).setLngLat([-77.0502, 38.8893])
+    //     .addTo(map);
+
+    //     Bonus: when the marker is dragged and released, display the coordinates in an h1
+
+    // marker.on('dragend', function() {
+    //     alert(marker.getLngLat());
+    // });
+
+    // Create an HTML file called mapbox-3.html and copy your code over from mapbox-2. Add a popup to the Lincoln Memorial marker that contains the text "Lincoln Memorial"
+
+    // var popup = new mapboxgl.Popup()
+    //     .setHTML('<h1 style="color: red">Lincoln Memorial</h1>');
+    //
+    // marker.setPopup(popup);
+
+    // Mini - Exercise 4 (before final exercise)
+    //
+    // Create an HTML file called mapbox-4.html centered on San Antonio that programmatically is re-centered over Zion National Park using the coordinates of the park by geocoding the physical address.
+
+    var map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-98.4916, 29.4260], // starting position [lng, lat]
+        zoom: 12 // starting zoom
+    });
+
+    // setTimeout(function (){
+    //     map.setCenter([-77.0369, 38.9072]);
+    //     map.setZoom(12);
+    //     map.setStyle('mapbox://styles/mapbox/streets-v11');
+    // }, 3000);
+
+
+    function goToZion() {
+        geocode("Zion National Park", MAPBOX_API_TOKEN).then(function (data) {
+            console.log(data);
+            map.setCenter([data[0], data[1]]);
+            map.setZoom(12);
+            map.setStyle('mapbox://styles/mapbox/streets-v11');
+        });
+    }
+    setTimeout(goToZion, 5000);
+
+    //     Add the latitude and longitude of Honolulu, Hawaii and use reverse geocoding to move the map to this location by geocoding inside of the reverseGeocode function.
+
+    function goToHonolulu() {
+        reverseGeocode({lng: -157.8583, lat: 21.3069}, MAPBOX_API_TOKEN).then(function (data) {
+            // console.log(data);
+            geocode(data, MAPBOX_API_TOKEN).then(function (data) {
+                map.setCenter([data[0], data[1]]);
+                map.setZoom(12);
+                map.setStyle('mapbox://styles/mapbox/streets-v11');
+            })
+        });
+    }
+    setTimeout(goToHonolulu, 10000);
+
+
+
+
+</script>
+</body>
+</html>
