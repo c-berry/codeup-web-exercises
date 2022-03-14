@@ -551,18 +551,53 @@
 
 // Write a function, returnStringObject, that takes in a string and returns an object with information about the string. The object should have properties for stringValue and stringArray.
 //BOTH WORK THE SAME:
-function returnStringObject(str) {
-    var strValue = {};
-    strValue.stringValue = str;
-    strValue.stringArray = str.split("");
-    return strValue;
-}
-console.log(returnStringObject("hello"));
+// function returnStringObject(str) {
+//     var strValue = {};
+//     strValue.stringValue = str;
+//     strValue.stringArray = str.split("");
+//     return strValue;
+// }
+// console.log(returnStringObject("hello"));
+//
+// function returnStringObject2(str) {
+//     return {
+//         stringValue: str,
+//         stringArray: str.split("")
+//     }
+// }
+// console.log(returnStringObject2("hello"));
 
-function returnStringObject2(str) {
-    return {
-        stringValue: str,
-        stringArray: str.split("")
+// Write a function, countNegatives, and takes in an array of integers and returns the total number of negative numbers. 0 should be considered a non-negative number. If no negative numbers are present, return 0.
+var nums1 = [-5, 10, 2, 5]; // countNegatives(nums1) returns 1
+var nums2 = [1, -10, -2, 5]; // countNegatives(nums2) returns 2
+var nums3 = [3, 10, 2, 5]; // countNegatives(nums3) returns 0
+var nums4 = [-3, -10]; // countNegatives(nums4) returns 2
+function countNegatives(arr){
+    var sum = 0
+    for (var i = 0; i < arr.length; i++){
+        if (arr[i] < 0){
+            sum += 1;
+        }
     }
+    return sum;
 }
-console.log(returnStringObject2("hello"));
+console.log(countNegatives(nums1));
+console.log(countNegatives(nums2));
+console.log(countNegatives(nums3));
+console.log(countNegatives(nums4));
+function countNegatives2(arr){
+    var sum = 0;
+    arr.forEach(function(num){
+        if (num < 0){
+            sum++
+        }
+    });
+    return sum;
+    }
+console.log(countNegatives2(nums1));
+console.log(countNegatives2(nums2));
+console.log(countNegatives2(nums3));
+console.log(countNegatives2(nums4));
+
+
+

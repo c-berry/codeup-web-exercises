@@ -24,18 +24,90 @@
     mapboxgl.accessToken = MAPBOX_API_TOKEN;
 
 // BASIC TEMPLATE OF STARTING MAP IN S.A.
-    // var map = new mapboxgl.Map({
-    //     container: 'map', // container ID
-    //     style: 'mapbox://styles/mapbox/streets-v11', // style URL
-    //     center: [-98.4916, 29.4260], // starting position [lng, lat]
-    //     zoom: 10 // starting zoom
-    // });
-
-    geocode("San Antonio, Texas", MAPBOX_API_TOKEN).then(function (data) {
-        map.setCenter([data[0], data[1]]);
-        map.setZoom(12);
-        map.setStyle('mapbox://styles/mapbox/streets-v11');
+    var map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-98.4916, 29.4260], // starting position [lng, lat]
+        zoom: 10 // starting zoom
     });
+
+    var favoriteRestaraunts = [
+        {
+            "name": "Pam's Patio Kitchen",
+            "address": "11826 Wurzbach Rd, San Antonio, TX 78230",
+            "location": [-98.54151710247667, 29.54995261514272]
+        }, {
+            "name": "Benjie's Munch",
+            "address": "1218 W Bitters Rd APT 107, San Antonio, TX 78216",
+            "location": [-98.51207800238936, 29.578295958165704]
+        }, {
+            "name": "La Fonda On Main",
+            "address": "2415 N Main Ave, San Antonio, TX 78212",
+            "location": [-98.4941204870506, 29.452641731645446]
+        }
+    ];
+
+    favoriteRestaraunts.forEach(function (restaraunt){
+        geocode(restaraunt.address, MAPBOX_API_TOKEN).then(function(results){
+
+            var popup = new mapboxgl.Popup()
+                .setHTML("<h1>" + restaraunt.name + "</h1>");
+
+            var marker = new mapboxgl.Marker()
+                .setLngLat(results)
+                .addTo(map)
+                .setPopup(popup);
+        });
+    });
+
+    // function restaraunts() {
+    //     geocode(favoriteRestaraunts.address, MAPBOX_API_TOKEN).then(function(results){
+    //         var popup = new mapboxgl.Popup()
+    //                     .setHTML("<h1>" + favoriteRestaraunts.name + "</h1>");
+    //
+    //                 var marker = new mapboxgl.Marker()
+    //                     .setLngLat(results)
+    //                     .addTo(map)
+    //                     .setPopup(popup);
+    //     });
+    // }
+    // restaraunts();
+
+    // function favRestaraunt() {
+    //     geocode("11826 Wurzbach Rd, San Antonio, TX 78230", MAPBOX_API_TOKEN).then(function (data) {
+    //         map.setCenter(data);
+    //         map.setZoom(10);
+    //         map.setStyle('mapbox://styles/mapbox/streets-v11');
+    //     });
+    //
+    //     var popup = new mapboxgl.Popup()
+    //         .setHTML("<p>Pam's Patio Kitchen</p>");
+    //
+    //     var marker = new mapboxgl.Marker()
+    //         .setLngLat([-98.54151710247667, 29.54995261514272])
+    //         .addTo(map)
+    //         .setPopup(popup);
+    // }
+    // favRestaraunt();
+
+    // function placeMarkerAndPopup() {
+    //     var popup = new mapboxgl.Popup()
+    //         .setHTML(favoriteRestaraunts.name);
+    //
+    //     var marker = new mapboxgl.Marker()
+    //         .setLngLat(favoriteRestaraunts.location)
+    //         .addTo(map);
+    //
+    //     marker.setPopup(popup);
+    // }
+    //
+
+
+
+
+
+
+
 
 </script>
 </body>
