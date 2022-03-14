@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Practice</title>
+    <stlye></stlye>
+</head>
+<body>
+
+    <h1>Exercise to Practice Open Weather Map</h1>
+<script src="js/jquery-2.2.4.js"></script>
+<script src="js/keys.js"></script>
+<script>
+    "use strict";
+
+    // var date = new Date(1647292920 * 1000)
+
+    $.get('https://api.openweathermap.org/data/2.5/onecall', {
+        lat: 29.4252,
+        lon: -98.4916,
+        appid: WEATHER_TOKEN,
+        exclude: "minutely,hourly,current,alerts",
+        units: "imperial"
+    }).done(function(data) {
+        console.log(data);
+        console.log(data.daily[0].clouds)
+        console.log(data.daily[1].wind_gust)
+    }).fail(function(jqXhr, status, error) {
+        console.log(jqXhr);
+        console.log(status);
+        console.log(error);
+    });
+
+    $.get('https://api.openweathermap.org/data/2.5/onecall', {
+        appid: WEATHER_TOKEN,
+
+
+    })
+
+
+</script>
+
+</body>
+</html>
