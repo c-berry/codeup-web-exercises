@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <!--LINKS TO MAPBOX:-->
+    <!--MAPBOX:-->
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
     <style>
         #map {
@@ -60,10 +60,25 @@
         });
     });
 
-    // function restaraunts() {
-    //     geocode(favoriteRestaraunts.address, MAPBOX_API_TOKEN).then(function(results){
+    //ALTERNATE METHOD:
+    // function restaraunts(data) {
+    //     geocode(data.address, MAPBOX_API_TOKEN).then(function(results){
     //         var popup = new mapboxgl.Popup()
-    //                     .setHTML("<h1>" + favoriteRestaraunts.name + "</h1>");
+    //                     .setHTML("<h1>" + data.name + "</h1>");
+    //
+    //                 var marker = new mapboxgl.Marker()
+    //                     .setLngLat(results)
+    //                     .addTo(map)
+    //                     .setPopup(popup);
+    //     });
+    // }
+    // favoriteRestaraunts.forEach(restaraunts);
+
+    //CALLS FIRST RESTAURAUNT"
+    // function restaraunts() {
+    //     geocode(favoriteRestaraunts[0].address, MAPBOX_API_TOKEN).then(function(results){
+    //         var popup = new mapboxgl.Popup()
+    //                     .setHTML("<h1>" + favoriteRestaraunts[0].name + "</h1>");
     //
     //                 var marker = new mapboxgl.Marker()
     //                     .setLngLat(results)
