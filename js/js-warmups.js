@@ -351,23 +351,23 @@
 // btn.addEventListener("click", goodMorning);
 
 // Consider the following array of users:
-    var users = [
-        {
-            username: 'fsmith',
-            email: 'fsmith@email.com',
-            numberOfLogins: 23
-        },
-        {
-            username: 'ksmith',
-            email: 'ksmith@email.com',
-            numberOfLogins: 100
-        },
-        {
-            username: 'lsmith',
-            email: 'lsmith@email.com',
-            numberOfLogins: 10
-        }
-    ];
+//     var users = [
+//         {
+//             username: 'fsmith',
+//             email: 'fsmith@email.com',
+//             numberOfLogins: 23
+//         },
+//         {
+//             username: 'ksmith',
+//             email: 'ksmith@email.com',
+//             numberOfLogins: 100
+//         },
+//         {
+//             username: 'lsmith',
+//             email: 'lsmith@email.com',
+//             numberOfLogins: 10
+//         }
+//     ];
 // 1. Create a function, returnFirstUser, that takes in an array of user objects and returns the first user object:
 // function returnFirstUser(users) {
 //     return users[0];
@@ -568,36 +568,73 @@
 // console.log(returnStringObject2("hello"));
 
 // Write a function, countNegatives, and takes in an array of integers and returns the total number of negative numbers. 0 should be considered a non-negative number. If no negative numbers are present, return 0.
-var nums1 = [-5, 10, 2, 5]; // countNegatives(nums1) returns 1
-var nums2 = [1, -10, -2, 5]; // countNegatives(nums2) returns 2
-var nums3 = [3, 10, 2, 5]; // countNegatives(nums3) returns 0
-var nums4 = [-3, -10]; // countNegatives(nums4) returns 2
-function countNegatives(arr){
-    var sum = 0
-    for (var i = 0; i < arr.length; i++){
-        if (arr[i] < 0){
-            sum += 1;
-        }
-    }
-    return sum;
-}
-console.log(countNegatives(nums1));
-console.log(countNegatives(nums2));
-console.log(countNegatives(nums3));
-console.log(countNegatives(nums4));
-function countNegatives2(arr){
-    var sum = 0;
-    arr.forEach(function(num){
-        if (num < 0){
-            sum++
-        }
-    });
-    return sum;
-    }
-console.log(countNegatives2(nums1));
-console.log(countNegatives2(nums2));
-console.log(countNegatives2(nums3));
-console.log(countNegatives2(nums4));
+// var nums1 = [-5, 10, 2, 5]; // countNegatives(nums1) returns 1
+// var nums2 = [1, -10, -2, 5]; // countNegatives(nums2) returns 2
+// var nums3 = [3, 10, 2, 5]; // countNegatives(nums3) returns 0
+// var nums4 = [-3, -10]; // countNegatives(nums4) returns 2
+// function countNegatives(arr){
+//     var sum = 0
+//     for (var i = 0; i < arr.length; i++){
+//         if (arr[i] < 0){
+//             sum += 1;
+//         }
+//     }
+//     return sum;
+// }
+// console.log(countNegatives(nums1));
+// console.log(countNegatives(nums2));
+// console.log(countNegatives(nums3));
+// console.log(countNegatives(nums4));
+// function countNegatives2(arr){
+//     var sum = 0;
+//     arr.forEach(function(num){
+//         if (num < 0){
+//             sum++
+//         }
+//     });
+//     return sum;
+//     }
+// console.log(countNegatives2(nums1));
+// console.log(countNegatives2(nums2));
+// console.log(countNegatives2(nums3));
+// console.log(countNegatives2(nums4));
 
-
+// Create a function, createFirstNamesArray, that takes in an array of user objects and returns an array of first name strings. Assume that each user object has a property called 'firstName'.
+// var users = [
+//     {
+//         firstName: 'Bob',
+//         lastName: 'Smith',
+//         email: 'bob@email.com'
+//     },
+//     {
+//         firstName: 'Sally',
+//         lastName: 'Smith',
+//         email: 'sally@email.com'
+//     },
+//     {
+//         firstName: 'Fred',
+//         lastName: 'Smith',
+//         email: 'fred@email.com'
+//     },
+//     {
+//         firstName: 'Cathy',
+//         lastName: 'Smith',
+//         email: 'cathy@email.com'
+//     },
+//     {
+//         firstName: 'Joe',
+//         lastName: 'Smith',
+//         email: 'joe@email.com'
+//     },
+// ];
+// function createFirstNamesArray(arr){
+//     var output = [];
+//     for(var i = 0; i < arr.length; i++){
+//         output += arr[i].firstName + ",";
+//     }
+//     output = output.split(",");
+//     output.pop();
+//     return output;
+// }
+// createFirstNamesArray(users); // returns... ['Bob', 'Sally', 'Fred', 'Cathy', 'Joe']
 
