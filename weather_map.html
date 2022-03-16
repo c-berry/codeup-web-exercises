@@ -9,9 +9,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- STYLESHEET:-->
     <style>
+        body {
+            background-color: deepskyblue
+        }
         #map {
-            width: 100%;
+            width: 99%;
             height: 500px;
+            border: solid black;
         }
         #forecast {
             width: 25%;
@@ -23,40 +27,54 @@
         section {
             width: 100%;
             display: flex;
+            /*background-color: deepskyblue;*/
         }
         #weather-box {
            width: 20em;
-            border: solid lightgrey;
-            padding: .6em .6em .6em .6em;
-            margin: .5em .5em .5em .5em;
+            /*border: solid lightgrey;*/
+            /*border-top: solid 3px lightgrey;*/
+            border-left: solid 2px deepskyblue;
+            border-right: solid 2px deepskyblue;
+            padding: 0em .6em .6em .6em;
+            margin: .5em 0em 0em 0em;
+            background-color: white;
         }
         hr {
             margin: .2em 0 .2em 0;
             width: 100%;
         }
         #location {
-            margin-left: .5em;
+            margin-left: .6em;
+            /*color: white;*/
+        }
+        button{
+            background-color: white;
         }
     </style>
 
 </head>
 <body>
-<!--SEARCHBAR-->
-<div class="d-flex">
-    <input id="search-place" name="search-place" class="form-control mx-2 my-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success mx-2 my-2" type="submit">Search</button>
-</div>
-
+<!--WEATHER INFO DISPLAYED HERE-->
 <section></section>
+<!--SEARCHBAR-->
+<nav class="navbar-light">
+    <div class="d-flex">
+        <button class="btn btn-outline-light mx-2 my-2" type="submit"><i class="fa-solid fa-location-dot"></i></button>
+        <input id="search-place" name="search-place" class="form-control mx-2 my-2" type="search" placeholder="Search" aria-label="Search">
 
-<div id="location"></div>
+    </div>
+</nav>
 
-<div id="map" class=""></div>
+
+<div id="location" class=""></div>
+
+<div id="map" class="my-2 mx-auto"></div>
 
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script src="js/jquery-2.2.4.js"></script>
 <script src="js/keys.js"></script>
+<script src="https://kit.fontawesome.com/2d338dc08d.js" crossorigin="anonymous"></script>
 <script>
     "use strict";
 
@@ -121,7 +139,7 @@ function findLocale(){
 // CALL FUNCTION TO PULL ADDRESS AND DIPLSAY INFO ON PAGE>
 function findLocation() {
     reverseGeocode2(findLocale(), MAPBOX_API_TOKEN).then(function (data) {
-        $("#location").html(data);
+        $("#location").html("<strong>" + data + "</strong>");
     });
 }
 
@@ -156,12 +174,11 @@ function findLocation() {
                     var weatherHigh = data.daily[i].temp.max;
                     var weatherLow = data.daily[i].temp.min;
                     var feelsLike = data.daily[i].feels_like.day;
-                    html += "<div id='weather-box' class='card-body '>" +
-                        "<div class=''>" + getIcon(i) + "<br>" + date + "</div><hr>" +
-                        "<div>" + "High: " + weatherHigh + "°F</div>" +
-                        "<div>" + "Low: " + weatherLow + "°F</div>" +
-                        "<div>" + "Currently: " + feelsLike + "°F</div>" +
-                        "</div>"
+                    html += "<div id='weather-box' class='card-body '>"
+                        + "<div class=''>" + getIcon(i) + "<br>" + date + "</div><hr>"
+                        + "<div>" + "High: " + "<strong>" + weatherHigh + "°F</strong></div>"
+                        + "<div>" + "Low: " + "<strong>" + weatherLow + "°F</strong></div>"
+                        + "<div>" + "Currently: " + "<strong>" + feelsLike + "°F</strong></div></div>"
                 }
                 return html;
             }
@@ -172,8 +189,8 @@ function findLocation() {
 
         });
     }
-    // MAIN FUNCTION CALL:
 
+    // MAIN FUNCTION CALL:
     $(window).on("load", function (){
         getForecast();
         findLocation();
