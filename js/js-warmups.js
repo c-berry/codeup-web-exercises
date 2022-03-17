@@ -1,4 +1,7 @@
 "use strict";
+
+
+
 //write function takes input return the string "I
 //have no idea what you just said."
 // function noIdea(input) {
@@ -638,3 +641,23 @@
 // }
 // createFirstNamesArray(users); // returns... ['Bob', 'Sally', 'Fred', 'Cathy', 'Joe']
 
+// DOM WARMUP:
+// var changeColorButton = document.getElementById("change-color");
+// changeColorButton.addEventListener("click", function (){
+//     document.getElementById("square").style.backgroundColor = "red";
+// });
+
+// var resetButton = document.querySelector("#reset");
+// resetButton.addEventListener("click", function (){
+//     window.location.reload();
+// })
+
+$("#reset").on("click", function (){
+    location.reload();
+});
+
+$("#change-color").click(function (){
+    $("#square").css({
+        "background": "red"
+    });
+});
