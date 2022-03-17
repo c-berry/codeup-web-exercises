@@ -13,7 +13,7 @@
             background-color: deepskyblue
         }
         #map {
-            width: 99%;
+            width: 98.5%;
             height: 500px;
             border: solid black;
         }
@@ -30,14 +30,21 @@
             /*background-color: deepskyblue;*/
         }
         #weather-box {
-           width: 20em;
-            /*border: solid lightgrey;*/
+           width: 20%;
+            border: solid black 1px;
             /*border-top: solid 3px lightgrey;*/
-            border-left: solid 2px deepskyblue;
-            border-right: solid 2px deepskyblue;
+            /*border-left: solid 2px deepskyblue;*/
+            /*border-right: solid 2px deepskyblue;*/
+            border-radius: 10%;
             padding: 0em .6em .6em .6em;
-            margin: .5em 0em 0em 0em;
+            margin: 1em .5em 1em .5em;
             background-color: white;
+            transition: all .2s ease-in-out;
+
+        }
+        #weather-box:hover {
+            transform: scale(1.1);
+            z-index: +1;
         }
         hr {
             margin: .2em 0 .2em 0;
@@ -50,6 +57,9 @@
         button{
             background-color: white;
         }
+        #search-bar{
+            width: 50%;
+        }
     </style>
 
 </head>
@@ -57,16 +67,18 @@
 <!--WEATHER INFO DISPLAYED HERE-->
 <section></section>
 <!--SEARCHBAR-->
-<nav class="navbar-light">
-    <div class="d-flex">
-        <button class="btn btn-outline-light mx-2 my-2" type="submit"><i class="fa-solid fa-location-dot"></i></button>
-        <input id="search-place" name="search-place" class="form-control mx-2 my-2" type="search" placeholder="Search" aria-label="Search">
+<nav class="navbar-light d-flex">
 
+    <div class="d-flex" id="search-bar">
+        <input id="search-place" name="search-place" class="form-control mx-2 my-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light mx-2 my-2" type="submit"><i class="fa-solid fa-location-dot"></i></button>
     </div>
+    <div id="location" class="mt-3 me-2"></div>
+    <div id="location1" class="mt-3 me-2"></div>
 </nav>
 
 
-<div id="location" class=""></div>
+
 
 <div id="map" class="my-2 mx-auto"></div>
 
@@ -109,6 +121,13 @@
         searchBar();
     });
 
+    $(document).on('keypress',function(e) {
+        if(e.which === 13) {
+            search = $('#search-place').val();
+            searchBar();
+        }
+    });
+
     // SETS MARKER LOCATION BASED ON SEARCHBAR:
     function searchBar() {
         geocode(search, MAPBOX_API_TOKEN).then(function (search){
@@ -136,7 +155,7 @@ function findLocale(){
     objLocale["lat"] = locale[1];
     return objLocale;
 }
-// CALL FUNCTION TO PULL ADDRESS AND DIPLSAY INFO ON PAGE>
+// CALL FUNCTION TO PULL ADDRESS AND DISPLAY INFO ON PAGE>
 function findLocation() {
     reverseGeocode2(findLocale(), MAPBOX_API_TOKEN).then(function (data) {
         $("#location").html("<strong>" + data + "</strong>");
@@ -157,7 +176,7 @@ function findLocation() {
             lat: weatherCoordinates[0],
             lon: weatherCoordinates[1],
             units: "imperial",
-            exclude: "minutely,hourly,current,alerts"
+            exclude: "minutely,hourly,alerts"
         }).done(function (data) {
 
             function getIcon(i){
@@ -171,14 +190,17 @@ function findLocation() {
                 var html = "";
                 for (var i = 0; i < 5; i++) {
                     var date = new Date(data.daily[i].dt * 1000).toDateString();
+                    console.log(date)
                     var weatherHigh = data.daily[i].temp.max;
                     var weatherLow = data.daily[i].temp.min;
-                    var feelsLike = data.daily[i].feels_like.day;
+                    // var feelsLike = data.daily[i].feels_like.day;
                     html += "<div id='weather-box' class='card-body '>"
-                        + "<div class=''>" + getIcon(i) + "<br>" + date + "</div><hr>"
-                        + "<div>" + "High: " + "<strong>" + weatherHigh + "°F</strong></div>"
-                        + "<div>" + "Low: " + "<strong>" + weatherLow + "°F</strong></div>"
-                        + "<div>" + "Currently: " + "<strong>" + feelsLike + "°F</strong></div></div>"
+                        + "<div class=''>" + getIcon(i) + "<br>" + date.slice(0,-4) + "</div><hr>"
+                        + "<div>" + "High: " + "<strong>" + Math.round(weatherHigh) + "°F</strong></div>"
+                        + "<div>" + "Low: " + "<strong>" + Math.round(weatherLow) + "°F</strong></div>" +
+                        // "<div>" + "Currently: " + "<strong>" + feelsLike + "°F</strong>" +
+                        // "</div>" +
+                        "</div>"
                 }
                 return html;
             }
@@ -186,6 +208,9 @@ function findLocation() {
             $("section").html(
                 cycleForecast(data)
             );
+
+            console.log(data);
+            $("#location1").html("Currently: <strong>" + Math.round(data.current.feels_like) + "°F</strong>");
 
         });
     }
