@@ -651,13 +651,46 @@
 // resetButton.addEventListener("click", function (){
 //     window.location.reload();
 // })
+// $("#reset").on("click", function (){
+//     location.reload();
+// });
+//
+// $("#change-color").click(function (){
+//     $("#square").css({
+//         "background": "red"
+//     });
+// });
 
-$("#reset").on("click", function (){
-    location.reload();
-});
+const carArray = [
+    {
+    make: "Toyota",
+    model: "Tacoma",
+    year: 2019,
+    mileage: 12222
+}, {
+    make: "Toyota2",
+    model: "Tacoma2",
+    year: 2018,
+    mileage: 123333
+}, {
+        make: "Toyota3",
+        model: "Tacoma3",
+        year: 2020,
+        mileage: 124555
+    }
+]
+// console.log(carArray[1]);
+const car2 = carArray[1];
+// const {make, model, year, mileage} = carArray[2];
+//
+// console.log(`${make}`);
+// console.log(`${model}`);
+//
+// const sayHello = () => "Hello World";
+// console.log(sayHello())
 
-$("#change-color").click(function (){
-    $("#square").css({
-        "background": "red"
-    });
-});
+
+
+
+
+
