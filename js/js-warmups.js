@@ -661,36 +661,40 @@
 //     });
 // });
 
-const carArray = [
-    {
-    make: "Toyota",
-    model: "Tacoma",
-    year: 2019,
-    mileage: 12222
-}, {
-    make: "Toyota2",
-    model: "Tacoma2",
-    year: 2018,
-    mileage: 123333
-}, {
-        make: "Toyota3",
-        model: "Tacoma3",
-        year: 2020,
-        mileage: 124555
-    }
-]
-// console.log(carArray[1]);
-const car2 = carArray[1];
-// const {make, model, year, mileage} = carArray[2];
+//DOM WARMUP:
+// $(".square").eq(0).hover(function (){
+//     $(this).css({
+//         "background-color": "red"
+//     });
+// }, function (){
+//     $(this).css({
+//         "background-color": "white"
+//     });
+// });
 //
-// console.log(`${make}`);
-// console.log(`${model}`);
+// $(".square").eq(1).hover(function (){
+//     $(this).css({
+//         "background-color": "blue"
+//     });
+// }, function (){
+//     $(this).css({
+//         "background-color": "white"
+//     });
+// });
 //
-// const sayHello = () => "Hello World";
-// console.log(sayHello())
-
-
-
-
-
-
+// $(".square").eq(2).hover(function (){
+//     $(this).css({
+//         "background-color": "green"
+//     });
+// }, function (){
+//     $(this).css({
+//         "background-color": "white"
+//     });
+// });
+//THIS IS BETTER:
+$(".square").hover(function(){
+    const $targetColor = $(this).attr("data-color");
+    $(this).css("background-color", $targetColor);
+}, function (){
+    $(this).css("background-color", "");
+});
