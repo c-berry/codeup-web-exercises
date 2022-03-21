@@ -692,9 +692,23 @@
 //     });
 // });
 //THIS IS BETTER:
-$(".square").hover(function(){
-    const $targetColor = $(this).attr("data-color");
-    $(this).css("background-color", $targetColor);
-}, function (){
-    $(this).css("background-color", "");
-});
+// $(".square").hover(function(){
+//     const $targetColor = $(this).attr("data-color");
+//     $(this).css("background-color", $targetColor);
+// }, function (){
+//     $(this).css("background-color", "");
+// });
+
+// DOM WARMUP:
+// $("#changingColors .square").on("click", function() {
+//     $(this).toggleClass("yellow")});
+
+const changingColorsSquares = document.querySelectorAll("#changingColors .square");
+function toggleColor(e){
+    console.log(e.target);
+    !e.target.style.backgroundColor ? e.target.style.backgroundColor = "yellow" : e.target.style.backgroundColor = "";
+}
+changingColorsSquares.forEach(square => square.addEventListener("click", toggleColor));
+
+
+
