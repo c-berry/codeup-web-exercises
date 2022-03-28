@@ -703,12 +703,58 @@
 // $("#changingColors .square").on("click", function() {
 //     $(this).toggleClass("yellow")});
 
-const changingColorsSquares = document.querySelectorAll("#changingColors .square");
-function toggleColor(e){
-    console.log(e.target);
-    !e.target.style.backgroundColor ? e.target.style.backgroundColor = "yellow" : e.target.style.backgroundColor = "";
-}
-changingColorsSquares.forEach(square => square.addEventListener("click", toggleColor));
+// const changingColorsSquares = document.querySelectorAll("#changingColors .square");
+// function toggleColor(e){
+//     console.log(e.target);
+//     !e.target.style.backgroundColor ? e.target.style.backgroundColor = "yellow" : e.target.style.backgroundColor = "";
+// }
+// changingColorsSquares.forEach(square => square.addEventListener("click", toggleColor));
 
+// function sayHello(name) {
+//     return 'Hello, ' + name + '!';
+// }
+// console.log(sayHello("chris"));
+// const sayHello = (name) => `Hello, ${name}!`
+// console.log(sayHello("chris"))
+
+// let numbers = [1, 2, 3, 4, 5];
+// console.log(numbers);
+// const mapped = numbers.map(n => n * 3);
+// console.log(numbers);
+// console.log(mapped);
+
+// const isDivisibleBy3 = n => n % 3 === 0;
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// console.log(numbers.filter(isDivisibleBy3));
+// console.log(numbers);
+
+// Create a function, encodeStr, that takes in a string and returns the string of characters with the following substitutions:
+// function encodeStr(str){
+//     str = str.replace(/[aA]/g, "@");
+//     str = str.replace(/[iI]/g, "1");
+//     str = str.replace(/[sS]/g, "$");
+//     return str;
+// }
+//using map:
+function encodeStr(str){
+    return str.split("").map(char =>{
+        if (char.toLowerCase() === "a"){
+            return "@";
+        } else if(char.toLowerCase() === "s"){
+            return "$";
+        } else if(char.toLowerCase() === "i"){
+            return 1;
+        } else {
+            return char;
+        }
+    }).join("");
+}
+//     ‘a’ or ‘A’ becomes ‘@’
+// ‘i’ or ‘I’ becomes ‘1’
+// ‘s’ or ‘S’ becomse ‘$’
+console.log(encodeStr("banAna")); // returns ‘@pple’
+console.log(encodeStr("codeup")); // returns ‘codeup’
+console.log(encodeStr("SASS")); // returns ‘$@$$’
+console.log(encodeStr("bike lIfe")); // returns ‘b1ke’
 
 
