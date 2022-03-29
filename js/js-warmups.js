@@ -736,25 +736,123 @@
 //     return str;
 // }
 //using map:
-function encodeStr(str){
-    return str.split("").map(char =>{
-        if (char.toLowerCase() === "a"){
-            return "@";
-        } else if(char.toLowerCase() === "s"){
-            return "$";
-        } else if(char.toLowerCase() === "i"){
-            return 1;
-        } else {
-            return char;
-        }
-    }).join("");
-}
+// function encodeStr(str){
+//     return str.split("").map(char =>{
+//         if (char.toLowerCase() === "a"){
+//             return "@";
+//         } else if(char.toLowerCase() === "s"){
+//             return "$";
+//         } else if(char.toLowerCase() === "i"){
+//             return 1;
+//         } else {
+//             return char;
+//         }
+//     }).join("");
+// }
 //     ‘a’ or ‘A’ becomes ‘@’
 // ‘i’ or ‘I’ becomes ‘1’
 // ‘s’ or ‘S’ becomse ‘$’
-console.log(encodeStr("banAna")); // returns ‘@pple’
-console.log(encodeStr("codeup")); // returns ‘codeup’
-console.log(encodeStr("SASS")); // returns ‘$@$$’
-console.log(encodeStr("bike lIfe")); // returns ‘b1ke’
+// console.log(encodeStr("banAna")); // returns ‘@pple’
+// console.log(encodeStr("codeup")); // returns ‘codeup’
+// console.log(encodeStr("SASS")); // returns ‘$@$$’
+// console.log(encodeStr("bike lIfe")); // returns ‘b1ke’
+
+// Write a function, returnMostCommonVowel, that takes in a string and returns the most common vowel in the string.
+//     Assume the characters in the string are all lowercase and only 'a' 'e' 'i' 'o' 'u' count as vowels. Return the most common vowel from the string.
+//     If the highest vowel count is shared between multiple vowels, return the first vowel alphabetically. (2 'a's and 2 'e's should 'a')
+// If no vowels are in the string return false.
+// function returnMostCommonVowel(str){
+//     let a ={
+//         vowel: "a",
+//         val: 0
+//     };
+//     let e ={
+//         vowel: "e",
+//         val: 0
+//     };
+//     let i ={
+//         vowel: "i",
+//         val: 0
+//     };
+//     let o ={
+//         vowel: "o",
+//         val: 0
+//     };
+//     let u ={
+//         vowel: "u",
+//         val: 0
+//     };
+//
+//     for (let inc = 0; inc < str.length; inc++) {
+//         if (str[inc] === "a") {
+//             a.val += 1;
+//         }
+//         if (str[inc] === "e") {
+//             e.val += 1;
+//         }
+//         if (str[inc] === "i") {
+//             i.val += 1;
+//         }
+//         if (str[inc] === "o") {
+//             o.val += 1;
+//         }
+//         if (str[inc] === "u") {
+//             u.val += 1;
+//         }
+//     }
+//
+//     let mostUsedVowel = Math.max(a.val,e.val,i.val,o.val,u.val);
+//     if(mostUsedVowel === 0){
+//         return false;
+//     }
+//     if (mostUsedVowel === a.val){
+//         return a.vowel;
+//     } else if (mostUsedVowel === e.val){
+//         return e.vowel;
+//     } else if (mostUsedVowel === i.val){
+//         return i.vowel;
+//     } else if (mostUsedVowel === o.val){
+//         return o.vowel;
+//     } else {
+//         return u.vowel;
+//     }
+//
+// }
+
+// console.log(returnMostCommonVowel("oohyeah"));
+// console.log(returnMostCommonVowel("bananapop"));
+// console.log(returnMostCommonVowel("poopapa"));
+// console.log(returnMostCommonVowel("why"));
+
+//Oscar's solution for review:
+// function onlyVowels (str) {
+//     return str.split('').filter(function(v) {
+//         if (v === "a" || v === "e" || v === "i" || v === "o" || v === "u")
+//             return v;
+//         // console.log(v)
+//     });
+// }
+// function returnMostCommonVowel2 (string) {
+//     if (onlyVowels(string).length === 0) {
+//         return false;
+//     }
+//     let max = 0;
+//     let maxChar = "";
+//     onlyVowels(string).sort().forEach(function (char){
+//         if (string.split(char).length > max) {
+//             console.log(char);
+//             max = string.split(char).length;
+//             console.log(max);
+//             maxChar = char;
+//         }
+//     });
+//     console.log(maxChar);
+//     return maxChar;
+// }
+
+// returnMostCommonVowel2("papa");
+// returnMostCommonVowel2("why");
+// console.log(returnMostCommonVowel2("banana"));
+// console.log(returnMostCommonVowel2("poopapa"))
 
 
